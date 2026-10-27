@@ -18,7 +18,7 @@ body{padding:12px}
 </style>
 <script>
 window.dash = (function () {
-  var rows = [{"id":"GENEL","seri":"TP.TUKFIY2025.GENEL","ad":"Manşet TÜFE","grup":"tufe","oran":29.73},{"id":"01","seri":"TP.TUKFIY2025.01","ad":"Market & Gıda","grup":"kategori","oran":27.62},{"id":"02","seri":"TP.TUKFIY2025.02","ad":"Alkollü İçecek & Tütün","grup":"kategori","oran":31.6},{"id":"03","seri":"TP.TUKFIY2025.03","ad":"Giyim & Moda","grup":"kategori","oran":13.23},{"id":"04","seri":"TP.TUKFIY2025.04","ad":"Konut & Faturalar","grup":"kategori","oran":39.99},{"id":"05","seri":"TP.TUKFIY2025.05","ad":"Ev Eşyası & Mobilya","grup":"kategori","oran":23.81},{"id":"06","seri":"TP.TUKFIY2025.06","ad":"Sağlık & İlaç","grup":"kategori","oran":43.27},{"id":"07","seri":"TP.TUKFIY2025.07","ad":"Araba, Akaryakıt & Ulaşım","grup":"kategori","oran":35.11},{"id":"08","seri":"TP.TUKFIY2025.08","ad":"Teknoloji, İnternet & İletişim","grup":"kategori","oran":26.52},{"id":"09","seri":"TP.TUKFIY2025.09","ad":"Eğlence, Spor, Oyun & Kültür","grup":"kategori","oran":23.36},{"id":"10","seri":"TP.TUKFIY2025.10","ad":"Eğitim & Okul","grup":"kategori","oran":48.63},{"id":"11","seri":"TP.TUKFIY2025.11","ad":"Kafe, Restoran & Otel","grup":"kategori","oran":29.53},{"id":"12","seri":"TP.TUKFIY2025.12","ad":"Sigorta & Finansal Hizmetler","grup":"kategori","oran":31.88},{"id":"13","seri":"TP.TUKFIY2025.13","ad":"Kişisel Bakım & Çeşitli Hizmetler","grup":"kategori","oran":21.88},{"id":"YKKE_TR","seri":"YKKE","ad":"Türkiye","grup":"ykke","oran":26.61},{"id":"YKKE_IST","seri":"YKKE","ad":"İstanbul","grup":"ykke","oran":35.53},{"id":"YKKE_ANK","seri":"YKKE","ad":"Ankara","grup":"ykke","oran":25.11},{"id":"YKKE_IZM","seri":"YKKE","ad":"İzmir","grup":"ykke","oran":23.71},{"id":"KFE","seri":"KFE","ad":"Konut Fiyat Endeksi","grup":"varlik","oran":22.34},{"id":"USD","seri":"USD/TRY","ad":"USD/TRY","grup":"varlik","oran":18.01},{"id":"EUR","seri":"EUR/TRY","ad":"EUR/TRY","grup":"varlik","oran":13.75},{"id":"BEK_PIYASA","seri":"Beklenti 12 ay","ad":"Piyasa Katılımcıları","grup":"beklenti","oran":23.89},{"id":"BEK_REEL","seri":"Beklenti 12 ay","ad":"Reel Sektör","grup":"beklenti","oran":31.8},{"id":"BEK_HANE","seri":"Beklenti 12 ay","ad":"Hanehalkı","grup":"beklenti","oran":43.75}];
+  var rows = [{"id":"GENEL","seri":"TP.TUKFIY2025.GENEL","ad":"Manşet TÜFE","grup":"tufe","oran":29.73},{"id":"01","seri":"TP.TUKFIY2025.01","ad":"Market & Gıda","grup":"kategori","oran":27.62},{"id":"02","seri":"TP.TUKFIY2025.02","ad":"Alkollü İçecek & Tütün","grup":"kategori","oran":31.6},{"id":"03","seri":"TP.TUKFIY2025.03","ad":"Giyim & Moda","grup":"kategori","oran":13.23},{"id":"041","seri":"TP.TUKFIY2025.041","ad":"Kira","grup":"kategori","oran":41.34},{"id":"04F","seri":"TP.TUKFIY2025.045 ×0,75 + .044 ×0,25 (tahmini)","ad":"Faturalar (elektrik, doğalgaz, su)","grup":"kategori","oran":37.13},{"id":"05","seri":"TP.TUKFIY2025.05","ad":"Ev Eşyası & Mobilya","grup":"kategori","oran":23.81},{"id":"06","seri":"TP.TUKFIY2025.06","ad":"Sağlık & İlaç","grup":"kategori","oran":43.27},{"id":"07","seri":"TP.TUKFIY2025.07","ad":"Araba, Akaryakıt & Ulaşım","grup":"kategori","oran":35.11},{"id":"08","seri":"TP.TUKFIY2025.08","ad":"Teknoloji, İnternet & İletişim","grup":"kategori","oran":26.52},{"id":"09","seri":"TP.TUKFIY2025.09","ad":"Eğlence, Spor, Oyun & Kültür","grup":"kategori","oran":23.36},{"id":"10","seri":"TP.TUKFIY2025.10","ad":"Eğitim & Okul","grup":"kategori","oran":48.63},{"id":"11","seri":"TP.TUKFIY2025.11","ad":"Kafe, Restoran & Otel","grup":"kategori","oran":29.53},{"id":"12","seri":"TP.TUKFIY2025.12","ad":"Sigorta & Finansal Hizmetler","grup":"kategori","oran":31.88},{"id":"13","seri":"TP.TUKFIY2025.13","ad":"Kişisel Bakım & Çeşitli Hizmetler","grup":"kategori","oran":21.88},{"id":"04","seri":"TP.TUKFIY2025.04","ad":"Konut, su, elektrik, gaz (ana grup)","grup":"konut","oran":39.99},{"id":"044","seri":"TP.TUKFIY2025.044","ad":"Su temini ve konutla ilgili hizmetler","grup":"alt","oran":25.54},{"id":"045","seri":"TP.TUKFIY2025.045","ad":"Elektrik, gaz ve diğer yakıtlar","grup":"alt","oran":40.99},{"id":"YKKE_TR","seri":"YKKE","ad":"Türkiye","grup":"ykke","oran":26.61},{"id":"YKKE_IST","seri":"YKKE","ad":"İstanbul","grup":"ykke","oran":35.53},{"id":"YKKE_ANK","seri":"YKKE","ad":"Ankara","grup":"ykke","oran":25.11},{"id":"YKKE_IZM","seri":"YKKE","ad":"İzmir","grup":"ykke","oran":23.71},{"id":"KFE","seri":"KFE","ad":"Konut Fiyat Endeksi","grup":"varlik","oran":22.34},{"id":"USD","seri":"USD/TRY","ad":"USD/TRY","grup":"varlik","oran":18.01},{"id":"EUR","seri":"EUR/TRY","ad":"EUR/TRY","grup":"varlik","oran":13.75},{"id":"BEK_PIYASA","seri":"Beklenti 12 ay","ad":"Piyasa Katılımcıları","grup":"beklenti","oran":23.89},{"id":"BEK_REEL","seri":"Beklenti 12 ay","ad":"Reel Sektör","grup":"beklenti","oran":31.8},{"id":"BEK_HANE","seri":"Beklenti 12 ay","ad":"Hanehalkı","grup":"beklenti","oran":43.75}];
   var res = { status: 'ok', data: rows, columns: Object.keys(rows[0]), meta: [], refreshing: false, message: '' };
   return {
     data: function () { return res; },
@@ -77,6 +77,11 @@ window.dash = (function () {
 .ke-city.on{display:flex}
 .ke-city button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-size:13px}
 .ke-city button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.ke-ownrent{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.ke-ownrent.off{display:none}
+.ke-ownrent .ke-money input{font-size:18px;padding:8px 0}
+.ke-ownrent small{font-size:11px;color:var(--mut)}
+.ke input[type=range]:disabled{opacity:.35;cursor:not-allowed}
 .ke-tpl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:10px}
 .ke-tpl button{border:1px solid var(--line);background:var(--card2);border-radius:14px;padding:14px;text-align:left;display:flex;gap:10px;align-items:flex-start;transition:transform .15s,border-color .15s}
 .ke-tpl button:hover{transform:translateY(-2px);border-color:var(--pur)}
@@ -260,12 +265,18 @@ window.dash = (function () {
         <div class="ke-small" style="margin-top:8px" id="ke-budget-note"></div>
       </div>
       <div class="ke-card ke-field">
-        <label>Barınma modu (Konut kaleminin enflasyonunu belirler)</label>
+        <label>Barınma durumun (kira kaleminin enflasyonunu belirler)</label>
         <div class="ke-seg">
-          <button type="button" data-mode="mevcut" aria-pressed="true"><b>Mevcut kiracı / ev sahibi</b><span class="r">Konut & faturalar · %<span data-source="evds" data-field="oran" data-where="id=04" class="ke-r04">—</span></span></button>
-          <button type="button" data-mode="yeni" aria-pressed="false"><b>Bu yıl yeni ev kiraladım</b><span class="r">Yeni Kiracı Kira Endeksi (YKKE)</span></button>
+          <button type="button" data-mode="mevcut" aria-pressed="true"><b>Mevcut kiracıyım</b><span class="r">TÜFE kira · %<span data-source="evds" data-field="oran" data-where="id=041">—</span></span></button>
+          <button type="button" data-mode="yeni" aria-pressed="false"><b>Bu yıl yeni ev kiraladım</b><span class="r">Şehrin yeni kiracı kira endeksi</span></button>
+          <button type="button" data-mode="sahip" aria-pressed="false"><b>Ev sahibiyim</b><span class="r">Kira yok, sadece faturalar</span></button>
         </div>
         <div class="ke-city" id="ke-city" data-source="evds"></div>
+        <div class="ke-ownrent" id="ke-ownrent">
+          <label for="ke-rent">Kendi kira artışın (isteğe bağlı)</label>
+          <div class="ke-money"><span>%</span><input id="ke-rent" type="number" min="0" max="500" step="0.5" inputmode="decimal" placeholder="örn. 60"></div>
+          <small>Eski kirandan yeni kirana ya da son zammındaki artış. Doldurursan endeks yerine bu kullanılır.</small>
+        </div>
       </div>
     </section>
 
@@ -414,7 +425,7 @@ window.dash = (function () {
     </div>
   </div>
 
-  <p class="ke-foot">Veri: TCMB EVDS, TÜFE (2025=100) ana harcama grupları yıllık % değişim, Yeni Kiracı Kira Endeksi, Konut Fiyat Endeksi, döviz kurları ve Ekim 2026 Piyasa Katılımcıları / Reel Kesim / Hanehalkı 12 ay sonrası enflasyon beklentileri. Kişisel enflasyon = Σ (kalemin bütçe payı × kalemin yıllık enflasyonu); ağırlıklar otomatik olarak %100'e normalize edilir.</p>
+  <p class="ke-foot">Veri: TCMB EVDS, TÜFE (2025=100) ana harcama grupları yıllık % değişim, Yeni Kiracı Kira Endeksi, Konut Fiyat Endeksi, döviz kurları ve Ekim 2026 Piyasa Katılımcıları / Reel Kesim / Hanehalkı 12 ay sonrası enflasyon beklentileri. Kişisel enflasyon = Σ (kalemin bütçe payı × kalemin yıllık enflasyonu); her kalemin payı bütçenin yüzdesidir ve toplam %100'ü aşamaz; bütçenin bir kısmı dağıtılmadıysa hesap yalnızca dağıtılan kısım üzerinden yapılır. Kira, mevcut kiracıda TÜFE gerçek kira alt endeksiyle (041), yeni kiracıda şehrin Yeni Kiracı Kira Endeksi'yle hesaplanır; ev sahibinde kira yoktur. Faturalar, elektrik-gaz (045) ve su-konut hizmetleri (044) alt endekslerinden 3:1 ağırlıkla tahmin edilir (alt kalem ağırlıkları yayımlanmıyor). 12 aylık toplam ek maliyet, fiyatların yıl içinde kademeli arttığı varsayımıyla yaklaşık olarak verilir.</p>
 </div>
 
 <script>
@@ -468,20 +479,21 @@ window.dash = (function () {
   const TPL = {
     ozel:   { ad: 'Kendi sepetim', d: 'Sıfırdan kendin dağıt', ic: 'sliders', w: {} },
     beyaz:  { ad: 'Beyaz Yakalı & Araçlı', d: 'Ulaşım, kafe/restoran, konut', ic: 'car',
-      w: { '01':14,'02':3,'03':5,'04':24,'05':3,'06':2,'07':20,'08':5,'09':5,'10':0,'11':12,'12':4,'13':3 } },
+      w: { '01':14,'02':3,'03':5,'041':16,'04F':8,'05':3,'06':2,'07':20,'08':5,'09':5,'10':0,'11':12,'12':4,'13':3 } },
     aile:   { ad: 'Çocuklu Aile', d: 'Eğitim, gıda, sağlık, konut', ic: 'users',
-      w: { '01':24,'02':2,'03':6,'04':24,'05':4,'06':7,'07':8,'08':3,'09':3,'10':12,'11':3,'12':2,'13':2 } },
+      w: { '01':24,'02':2,'03':6,'041':15,'04F':9,'05':4,'06':7,'07':8,'08':3,'09':3,'10':12,'11':3,'12':2,'13':2 } },
     ogrenci:{ ad: 'Üniversite Öğrencisi', d: 'Kira, kafe, eğlence, ulaşım', ic: 'cap',
-      w: { '01':16,'02':5,'03':6,'04':30,'05':2,'06':1,'07':12,'08':5,'09':10,'10':3,'11':8,'12':0,'13':2 } },
+      w: { '01':16,'02':5,'03':6,'041':24,'04F':6,'05':2,'06':1,'07':12,'08':5,'09':10,'10':3,'11':8,'12':0,'13':2 } },
     tekno:  { ad: 'Teknoloji & Oyun Tutkunu', d: 'İletişim, eğlence, kafe', ic: 'game',
-      w: { '01':14,'02':2,'03':4,'04':22,'05':4,'06':2,'07':6,'08':18,'09':14,'10':0,'11':10,'12':2,'13':2 } }
+      w: { '01':14,'02':2,'03':4,'041':15,'04F':7,'05':4,'06':2,'07':6,'08':18,'09':14,'10':0,'11':10,'12':2,'13':2 } }
   };
   const PERSONA = {
     '01': ['Market Fişi Avcısı', 'Sepetin kasadaki her bip sesinde biraz daha ağırlaştı.'],
     '02': ['Tütün Vergisi Gönüllüsü', 'Bandrollü ürünlere sadakatin hazineye yaradı.'],
     '03': ['Sezon Sonu Stratejisti', 'Gardırobun enflasyonu indirimle dövdü.'],
-    '04': ['Ev Sahibinin Emeklilik Fonu', 'Kira ve faturalar bütçenin patronu oldu.'],
-    '04y': ['Yeni Kontrat Gazisi', 'Bu yıl emlakçıyla tanıştın; sonuç ortada.'],
+    '041': ['Ev Sahibinin Emeklilik Fonu', 'Kira, bütçenin patronu oldu.'],
+    '04F': ['Fatura Kahramanı', 'Elektrik, doğalgaz ve su faturaları bütçeni ısıttı.'],
+    '041y': ['Yeni Kontrat Gazisi', 'Bu yıl emlakçıyla tanıştın; sonuç ortada.'],
     '05': ['Kampanya Mobilyacısı', 'Evini döşerken taksit sayısını da döşedin.'],
     '06': ['Eczane VIP Üyesi', 'Sağlık kalemi yılın en hızlı koşucularından.'],
     '07': ['Pompa ve Sanayi Müdavimi', 'Akaryakıt fişlerin koleksiyon olacak uzunlukta.'],
@@ -495,22 +507,29 @@ window.dash = (function () {
   };
 
   // Tipik bir hanenin bütçe payları (%); persona, bu dağılımdan en çok saptığın kalemden seçilir
-  const BASE = { '01':25,'02':3.5,'03':6.5,'04':22,'05':8,'06':3,'07':16,'08':3.5,'09':3.5,'10':2,'11':9,'12':1,'13':5 };
+  const BASE = { '01':25,'02':3.5,'03':6.5,'041':13,'04F':9,'05':8,'06':3,'07':16,'08':3.5,'09':3.5,'10':2,'11':9,'12':1,'13':5 };
 
-  const S = { budget: 0, mode: 'mevcut', city: 'YKKE_IST', tpl: 'ozel', w: {}, saved: {}, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
+  const S = { budget: 0, mode: 'mevcut', city: 'YKKE_IST', rent: null, tpl: 'ozel', w: {}, saved: {}, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
   const tl = (v) => new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(Math.round(v)) + ' TL';
   const f2 = (v) => v.toFixed(2);
   const sgn = (v) => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2);
 
   let R = {}, cats = [], built = false, lastShare = '', WR = null;
 
-  function hr() { return S.mode === 'mevcut' ? R['04'].oran : R[S.city].oran; }
-  function rt(id) { return id === '04' ? hr() : R[id].oran; }
+  // Kira: girilen kendi artışın; yoksa mevcut kiracıda TÜFE kira, yeni kiracıda şehrin YKKE'si. Ev sahibinde kira yok.
+  function rentSrc() { return S.mode === 'yeni' ? S.city : '041'; }
+  function rt(id) {
+    if (id !== '041') return R[id].oran;
+    if (S.mode === 'sahip') return 0;
+    return S.rent != null ? S.rent : R[rentSrc()].oran;
+  }
+  // Ev sahibinde kira payı sayılmaz; kayıtlı dağılım değişmez, kiracı moduna dönünce geri gelir.
+  const wt = (id) => id === '041' && S.mode === 'sahip' ? 0 : (S.w[id] || 0);
   function calc() {
     const ids = cats.map(c => c.id);
-    const tot = ids.reduce((a, id) => a + (S.w[id] || 0), 0);
+    const tot = ids.reduce((a, id) => a + wt(id), 0);
     const sh = {};
-    ids.forEach(id => { sh[id] = tot > 0 ? (S.w[id] || 0) / tot : 0; });
+    ids.forEach(id => { sh[id] = tot > 0 ? wt(id) / tot : 0; });
     const p = ids.reduce((a, id) => a + sh[id] * rt(id), 0);
     return { ids, tot, sh, p, H: R.GENEL.oran };
   }
@@ -543,6 +562,7 @@ window.dash = (function () {
       cityBox.appendChild(b);
     });
     document.querySelectorAll('.ke-seg button').forEach(b => b.addEventListener('click', () => { S.mode = b.dataset.mode; update(); }));
+    $('ke-rent').addEventListener('input', (e) => { const v = e.target.value; S.rent = v === '' ? null : Math.max(0, +v); update(); });
     // sliderlar
     const box = $('ke-sliders');
     cats.forEach(c => {
@@ -550,7 +570,7 @@ window.dash = (function () {
       row.className = 'ke-sl'; row.dataset.id = c.id;
       row.innerHTML = '<div class="ke-slt"><span class="ke-sln"></span><span class="ke-badge">%<span class="b"></span></span><span class="ke-slv"></span></div><input type="range">';
       row.querySelector('.ke-sln').textContent = c.ad;
-      if (c.id === '04') { const sm = document.createElement('small'); sm.className = 'mode'; row.querySelector('.ke-sln').append(' ', sm); }
+      if (c.id === '041') { const sm = document.createElement('small'); sm.className = 'mode'; row.querySelector('.ke-sln').append(' ', sm); }
       const b = row.querySelector('.b');
       b.dataset.source = 'evds'; b.dataset.field = 'oran'; b.dataset.where = 'id=' + c.id;
       const inp = row.querySelector('input');
@@ -585,7 +605,7 @@ window.dash = (function () {
 
   // Bir kalem, diğerlerinden kalan bütçe payından fazlasını alamaz.
   function onSlide(id, v, inp) {
-    const others = cats.reduce((a, c) => a + (c.id === id ? 0 : (S.w[c.id] || 0)), 0);
+    const others = cats.reduce((a, c) => a + (c.id === id ? 0 : wt(c.id)), 0);
     const cap = Math.max(0, Math.round((100 - others) * 2) / 2);
     if (v > cap) { v = cap; inp.value = v; flashCap(); }
     if (v === (S.w[id] || 0)) return;
@@ -651,15 +671,19 @@ window.dash = (function () {
     const pill = $('ke-diff-pill');
     pill.className = 'ke-pill ' + (diff >= 0 ? 'up' : 'down') + (has ? '' : ' ke-hide');
     pill.textContent = has ? (Math.abs(diff).toFixed(2) + ' puan daha ' + (diff >= 0 ? 'fazla' : 'az') + ' zamlandın!') : '';
-    $('ke-budget-note').textContent = B && has ? 'Yıllık ek maliyet: ' + tl(B * p / 100 * 12) + ' (aylık +' + tl(B * p / 100) + ')' : 'Aylık toplam harcamanı TL olarak gir.';
+    $('ke-budget-note').textContent = B && has ? '12 ay sonra aylık +' + tl(B * p / 100) + ' · 12 ayda toplam ≈ +' + tl(B * p / 100 * 6) + ' (fiyatlar kademeli artarsa)' : 'Aylık toplam harcamanı TL olarak gir.';
     const bi = $('ke-budget');
     if (document.activeElement !== bi) bi.value = B || '';
 
     // barınma
     document.querySelectorAll('.ke-seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === S.mode)));
     $('ke-city').classList.toggle('on', S.mode === 'yeni');
+    $('ke-ownrent').classList.toggle('off', S.mode === 'sahip');
     document.querySelectorAll('#ke-city button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.city === S.city)));
-    document.querySelectorAll('.ke-r04').forEach(el => { el.textContent = f2(R['04'].oran); });
+    document.querySelectorAll('#ke [data-source="evds"][data-field="oran"]').forEach(el => {
+      const id = (el.dataset.where || '').slice(3);
+      if (R[id] && !el.closest('.ke-sl')) el.textContent = f2(R[id].oran);
+    });
     document.querySelectorAll('#ke-tpl button').forEach(b => {
       b.setAttribute('aria-pressed', String(b.dataset.tpl === S.tpl));
       b.classList.toggle('edited', !!S.saved[b.dataset.tpl]);
@@ -672,13 +696,16 @@ window.dash = (function () {
       const row = document.querySelector('.ke-sl[data-id="' + c.id + '"]');
       const inp = row.querySelector('input');
       const r = rt(c.id);
-      const bid = c.id === '04' && S.mode === 'yeni' ? S.city : c.id;
+      const own = c.id === '041' && (S.rent != null || S.mode === 'sahip');
       const b = row.querySelector('.b');
-      b.dataset.where = 'id=' + bid; b.textContent = f2(r);
+      b.dataset.where = 'id=' + (c.id === '041' ? rentSrc() : c.id); b.textContent = f2(r);
+      if (own) b.removeAttribute('data-source'); else b.dataset.source = 'evds';
       row.querySelector('.ke-badge').classList.toggle('hot', r > H);
-      if (c.id === '04') row.querySelector('.mode').textContent = S.mode === 'mevcut' ? '(mevcut düzen)' : '(yeni kira · ' + R[S.city].ad + ')';
-      const w = S.w[c.id] || 0, free = Math.max(0, 100 - m.tot);
+      if (c.id === '041') row.querySelector('.mode').textContent = S.mode === 'sahip' ? '(ev sahibi: kira yok)'
+        : S.rent != null ? '(kendi artışın)' : S.mode === 'mevcut' ? '(mevcut kiracı)' : '(yeni kira · ' + R[S.city].ad + ')';
+      const w = wt(c.id), free = Math.max(0, 100 - m.tot);
       inp.min = 0; inp.max = 100; inp.step = 0.5;
+      inp.disabled = c.id === '041' && S.mode === 'sahip';
       if (document.activeElement !== inp) inp.value = w;
       inp.style.setProperty('--p', w + '%');
       inp.style.setProperty('--q', Math.min(100, w + free) + '%');
@@ -701,14 +728,16 @@ window.dash = (function () {
     const cmax = contrib.length ? contrib[0].c : 0;
     bars('ke-contrib', contrib.filter(x => m.sh[x.id] > 0).map(x => ({
       n: R[x.id].ad, v: x.c.toFixed(2) + ' puan', x: x.c, cls: x.r > H ? 'hot' : '',
-      tip: 'Pay %' + (m.sh[x.id] * 100).toFixed(1) + ' × enflasyon %' + f2(x.r) + ' = ' + x.c.toFixed(2) + ' puan · yıllık +' + tl(m.sh[x.id] * B * x.r / 100 * 12)
+      tip: 'Pay %' + (m.sh[x.id] * 100).toFixed(1) + ' × enflasyon %' + f2(x.r) + ' = ' + x.c.toFixed(2) + ' puan · 12 ayda ≈ +' + tl(m.sh[x.id] * B * x.r / 100 * 6)
     })), cmax);
 
     // referanslar
     const refs = [
       { n: 'Senin sepetin', x: p, me: true, cls: 'me' },
       { n: 'Resmi TÜFE', x: H, cls: 'mut' },
-      { n: 'Yeni kira · ' + R[S.city].ad, x: R[S.city].oran, cls: R[S.city].oran > p ? 'hot' : 'mut' },
+      S.mode === 'yeni'
+        ? { n: 'Yeni kira · ' + R[S.city].ad, x: R[S.city].oran, cls: R[S.city].oran > p ? 'hot' : 'mut' }
+        : { n: 'Kira (TÜFE, mevcut kiracı)', x: R['041'].oran, cls: R['041'].oran > p ? 'hot' : 'mut' },
       { n: 'Konut fiyatları', x: R.KFE.oran, cls: 'mut' },
       { n: 'USD/TRY', x: R.USD.oran, cls: 'mut' },
       { n: 'EUR/TRY', x: R.EUR.oran, cls: 'mut' }
@@ -725,7 +754,7 @@ window.dash = (function () {
     $('ke-s-me-r').textContent = has ? '%' + f2(p) : '—';
     sims.forEach(([k, r]) => {
       $('ke-s-' + k).textContent = B ? tl(B * (1 + r / 100)) : '+%' + f2(r);
-      $('ke-s-' + k + '-p').textContent = B ? '+' + tl(B * r / 100) + ' / ay · +' + tl(B * r / 100 * 12) + ' / yıl' : 'Bütçeni girince TL olarak görünür';
+      $('ke-s-' + k + '-p').textContent = B ? '+' + tl(B * r / 100) + ' / ay (12 ay sonra)' : 'Bütçeni girince TL olarak görünür';
       $('ke-s-' + k + '-m').style.width = (smax > 0 ? r / smax * 100 : 0) + '%';
     });
     $('ke-s-note').textContent = (B ? 'Bugünkü ' + tl(B) + "'lik" : 'Bugünkü') + " aylık bütçenin alım gücünü korumak için 12 ay sonra eline geçmesi gereken tutar (Ekim 2026 beklenti anketleri).";
@@ -736,7 +765,7 @@ window.dash = (function () {
     else {
       const sig = m.ids.map(id => ({ id, e: (m.sh[id] - (BASE[id] || 0) / 100) * rt(id) })).sort((a, b) => b.e - a.e);
       pk = sig[0] && sig[0].e > 0 ? sig[0].id : (contrib[0] ? contrib[0].id : 'bukucu');
-      if (pk === '04' && S.mode === 'yeni') pk = '04y';
+      if (pk === '041' && S.mode === 'yeni') pk = '041y';
     }
     const top3 = contrib.filter(x => m.sh[x.id] > 0).slice(0, 3);
     const usdReal = ((1 + p / 100) / (1 + R.USD.oran / 100) - 1) * 100;
@@ -793,7 +822,7 @@ window.dash = (function () {
     $('ke-s1-diff').textContent = w.diff >= 0
       ? 'Resmi rakamdan ' + Math.abs(w.diff).toFixed(2) + ' puan daha fazla zamlandın.'
       : 'Resmi rakamdan ' + Math.abs(w.diff).toFixed(2) + ' puan daha az zamlandın. Tebrikler!';
-    $('ke-s1-hint').textContent = S.hideTL || !w.B ? '' : 'Aylık ' + tl(w.B) + "'lik sepetin yılda +" + tl(w.B * w.p / 100 * 12) + ' ek maliyet demek.';
+    $('ke-s1-hint').textContent = S.hideTL || !w.B ? '' : 'Aylık ' + tl(w.B) + "'lik sepetin önümüzdeki 12 ayda ≈ +" + tl(w.B * w.p / 100 * 6) + ' ek maliyet demek.';
     // 2: en çok vuranlar
     const l2 = $('ke-s2-list'); l2.innerHTML = '';
     w.top3.forEach((x, i) => {
@@ -802,7 +831,7 @@ window.dash = (function () {
       const n = document.createElement('span'); n.className = 'nm'; n.textContent = R[x.id].ad;
       const t = document.createElement('span'); t.className = 'dt';
       t.textContent = '%' + f2(x.r) + ' zam · sepetin %' + (w.sh[x.id] * 100).toFixed(0) + "'i · "
-        + (S.hideTL ? '+' + x.c.toFixed(2) + ' puan' : '+' + tl(w.sh[x.id] * w.B * x.r / 100 * 12) + '/yıl');
+        + (S.hideTL ? '+' + x.c.toFixed(2) + ' puan' : '≈ +' + tl(w.sh[x.id] * w.B * x.r / 100 * 6) + ' / 12 ay');
       d.append(r, n, t); l2.appendChild(d);
     });
     // 3: dolar bazında
