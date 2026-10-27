@@ -85,9 +85,18 @@ window.dash = (function () {
 .ke-tpl b{display:block;font-size:14px} .ke-tpl small{color:var(--mut);font-size:12px}
 .ke-main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr));gap:14px;align-items:start}
 .ke-shead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
-.ke-unit{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px}
-.ke-unit button{border:0;background:transparent;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;color:var(--mut)}
-.ke-unit button[aria-pressed=true]{background:var(--grn);color:#04130a}
+.ke-reset{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;color:var(--mut)}
+.ke-reset:hover{color:var(--fg);border-color:var(--pur)}
+.ke-alloc{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:4px 0 8px;display:flex;flex-direction:column;gap:7px}
+.ke-alloc-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:13px;font-weight:600}
+.ke-alloc-top span:last-child{color:var(--amb)}
+.ke-alloc-bar{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.ke-alloc-bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--grn),var(--pur));transition:width .2s}
+.ke-alloc small{font-size:11px;color:var(--mut)}
+.ke-alloc.full{animation:keFull .5s}
+@keyframes keFull{0%,100%{border-color:var(--line)}30%{border-color:var(--hot);box-shadow:0 0 0 3px rgba(255,84,112,.25)}}
+.ke-tpl .ed{display:none;margin-top:4px;font-style:normal;font-size:11px;font-weight:700;color:var(--amb)}
+.ke-tpl button.edited .ed{display:block}
 .ke-sl{padding:10px 0;border-top:1px solid var(--line)}
 .ke-sl:first-of-type{border-top:0}
 .ke-slt{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
@@ -97,10 +106,9 @@ window.dash = (function () {
 .ke-badge.hot{background:rgba(255,84,112,.14);color:var(--hot)}
 .ke-slv{font-size:13px;color:var(--mut);min-width:9.5rem;text-align:right}
 .ke-slv b{color:var(--fg)}
-.ke input[type=range]{touch-action:pan-y;-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--grn) var(--p,0%),var(--line) var(--p,0%));outline:none;margin:4px 0}
+.ke input[type=range]{touch-action:pan-y;-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--grn) var(--p,0%),rgba(30,215,96,.3) var(--p,0%),rgba(30,215,96,.3) var(--q,0%),#2c2c4c var(--q,0%));outline:none;margin:4px 0}
 .ke input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--grn);cursor:pointer}
 .ke input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--grn);cursor:pointer}
-.ke-norm{font-size:12px;color:var(--mut);margin-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .ke-bars{display:flex;flex-direction:column;gap:9px;position:relative}
 .ke-bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;font-size:13px;cursor:default}
 .ke-bar .n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -263,7 +271,7 @@ window.dash = (function () {
 
     <section>
       <div class="ke-ttl" id="ke-tpl-ttl"></div>
-      <p class="ke-note">Tek tıkla sepeti doldur, sonra slider'larla kendine göre ayarla.</p>
+      <p class="ke-note">Tek tıkla sepeti doldur, sonra slider'larla kendine göre ayarla. Düzenlemelerin her şablon için ayrı saklanır.</p>
       <div class="ke-tpl" id="ke-tpl"></div>
     </section>
 
@@ -274,13 +282,14 @@ window.dash = (function () {
             <div class="ke-ttl" id="ke-sl-ttl"></div>
             <p class="ke-note" style="margin-bottom:6px">Rozetler: kalemin resmi yıllık artışı. Kırmızı = TÜFE'nin üstünde.</p>
           </div>
-          <div class="ke-unit" role="group" aria-label="Birim">
-            <button type="button" data-unit="pct" aria-pressed="true">%</button>
-            <button type="button" data-unit="tl" aria-pressed="false">TL</button>
-          </div>
+          <button type="button" class="ke-reset" id="ke-reset">↺ Varsayılana dön</button>
+        </div>
+        <div class="ke-alloc" id="ke-alloc">
+          <div class="ke-alloc-top"><span id="ke-norm"></span><span id="ke-norm2"></span></div>
+          <div class="ke-alloc-bar"><i id="ke-alloc-fill"></i></div>
+          <small id="ke-alloc-hint"></small>
         </div>
         <div id="ke-sliders"></div>
-        <div class="ke-norm"><span id="ke-norm"></span><span id="ke-norm2"></span></div>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:14px">
@@ -482,7 +491,7 @@ window.dash = (function () {
   // Tipik bir hanenin bütçe payları (%); persona, bu dağılımdan en çok saptığın kalemden seçilir
   const BASE = { '01':25,'02':3.5,'03':6.5,'04':22,'05':8,'06':3,'07':16,'08':3.5,'09':3.5,'10':2,'11':9,'12':1,'13':5 };
 
-  const S = { budget: 50000, mode: 'mevcut', city: 'YKKE_IST', unit: 'pct', tpl: 'beyaz', w: Object.assign({}, TPL.beyaz.w), tlMax: 50000, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
+  const S = { budget: 50000, mode: 'mevcut', city: 'YKKE_IST', tpl: 'beyaz', w: Object.assign({}, TPL.beyaz.w), saved: {}, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
   const tl = (v) => new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(Math.round(v)) + ' TL';
   const f2 = (v) => v.toFixed(2);
   const sgn = (v) => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2);
@@ -506,11 +515,11 @@ window.dash = (function () {
     Object.keys(TPL).forEach(k => {
       const b = document.createElement('button');
       b.type = 'button'; b.dataset.tpl = k;
-      b.innerHTML = '<span class="ic">' + ico(TPL[k].ic, 20) + '</span><span><b></b><small></small></span>';
+      b.innerHTML = '<span class="ic">' + ico(TPL[k].ic, 20) + '</span><span><b></b><small></small><em class="ed">✎ senin düzenlemen</em></span>';
       b.querySelector('b').textContent = TPL[k].ad;
       b.querySelector('small').textContent = TPL[k].d;
       b.addEventListener('click', () => {
-        S.tpl = k; S.w = Object.assign({}, TPL[k].w);
+        S.tpl = k; S.w = Object.assign({}, S.saved[k] || TPL[k].w);
         update();
       });
       tp.appendChild(b);
@@ -540,21 +549,17 @@ window.dash = (function () {
       b.dataset.source = 'evds'; b.dataset.field = 'oran'; b.dataset.where = 'id=' + c.id;
       const inp = row.querySelector('input');
       inp.setAttribute('aria-label', c.ad);
-      inp.addEventListener('input', () => onSlide(c.id, +inp.value));
+      inp.addEventListener('input', () => onSlide(c.id, +inp.value, inp));
       box.appendChild(row);
     });
-    // birim
-    document.querySelectorAll('.ke-unit button').forEach(b => b.addEventListener('click', () => {
-      const m = calc();
-      S.unit = b.dataset.unit;
-      cats.forEach(c => { S.w[c.id] = Math.round(m.sh[c.id] * 1000) / 10; });
-      S.tlMax = Math.max(10000, Math.ceil(S.budget / 5000) * 5000);
+    $('ke-reset').addEventListener('click', () => {
+      delete S.saved[S.tpl];
+      S.w = Object.assign({}, TPL[S.tpl].w);
       update();
-    }));
+    });
     const bi = $('ke-budget');
     bi.addEventListener('input', () => {
       S.budget = Math.max(0, +bi.value || 0);
-      S.tlMax = Math.max(10000, Math.ceil(S.budget / 5000) * 5000);
       update();
     });
     // sekmeler
@@ -572,20 +577,19 @@ window.dash = (function () {
     else if (built) setPlaying(false);
   }
 
-  function onSlide(id, v) {
-    if (S.unit === 'pct') {
-      S.w[id] = v;
-    } else {
-      const m = calc();
-      const t = {};
-      cats.forEach(c => { t[c.id] = m.sh[c.id] * S.budget; });
-      t[id] = v;
-      const B = cats.reduce((a, c) => a + t[c.id], 0);
-      S.budget = Math.round(B);
-      cats.forEach(c => { S.w[c.id] = B > 0 ? t[c.id] / B * 100 : 0; });
-    }
-    S.tpl = null;
+  // Bir kalem, diğerlerinden kalan bütçe payından fazlasını alamaz.
+  function onSlide(id, v, inp) {
+    const others = cats.reduce((a, c) => a + (c.id === id ? 0 : (S.w[c.id] || 0)), 0);
+    const cap = Math.max(0, Math.round((100 - others) * 2) / 2);
+    if (v > cap) { v = cap; inp.value = v; flashCap(); }
+    if (v === (S.w[id] || 0)) return;
+    S.w[id] = v;
+    S.saved[S.tpl] = Object.assign({}, S.w);
     update();
+  }
+  function flashCap() {
+    const el = $('ke-alloc');
+    el.classList.remove('full'); void el.offsetWidth; el.classList.add('full');
   }
 
   function tipify(boxId, tipId) {
@@ -648,8 +652,11 @@ window.dash = (function () {
     $('ke-city').classList.toggle('on', S.mode === 'yeni');
     document.querySelectorAll('#ke-city button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.city === S.city)));
     document.querySelectorAll('.ke-r04').forEach(el => { el.textContent = f2(R['04'].oran); });
-    document.querySelectorAll('#ke-tpl button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tpl === S.tpl)));
-    document.querySelectorAll('.ke-unit button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.unit === S.unit)));
+    document.querySelectorAll('#ke-tpl button').forEach(b => {
+      b.setAttribute('aria-pressed', String(b.dataset.tpl === S.tpl));
+      b.classList.toggle('edited', !!S.saved[b.dataset.tpl]);
+    });
+    $('ke-reset').style.visibility = S.saved[S.tpl] ? 'visible' : 'hidden';
 
     // sliderlar
     cats.forEach(c => {
@@ -661,20 +668,23 @@ window.dash = (function () {
       b.dataset.where = 'id=' + bid; b.textContent = f2(r);
       row.querySelector('.ke-badge').classList.toggle('hot', r > H);
       if (c.id === '04') row.querySelector('.mode').textContent = S.mode === 'mevcut' ? '(mevcut düzen)' : '(yeni kira · ' + R[S.city].ad + ')';
-      if (S.unit === 'pct') { inp.min = 0; inp.max = 60; inp.step = 0.5; }
-      else { inp.min = 0; inp.max = S.tlMax; inp.step = 250; }
-      const val = S.unit === 'pct' ? (S.w[c.id] || 0) : Math.round(m.sh[c.id] * B);
-      if (document.activeElement !== inp) inp.value = val;
-      inp.style.setProperty('--p', (Math.min(1, (+inp.value - inp.min) / (inp.max - inp.min)) * 100) + '%');
+      const w = S.w[c.id] || 0, free = Math.max(0, 100 - m.tot);
+      inp.min = 0; inp.max = 100; inp.step = 0.5;
+      if (document.activeElement !== inp) inp.value = w;
+      inp.style.setProperty('--p', w + '%');
+      inp.style.setProperty('--q', Math.min(100, w + free) + '%');
       const sv = row.querySelector('.ke-slv');
       sv.innerHTML = '';
-      const bb = document.createElement('b'); bb.textContent = '%' + (m.sh[c.id] * 100).toFixed(1);
-      sv.append(bb, ' · ' + tl(m.sh[c.id] * B));
+      const bb = document.createElement('b'); bb.textContent = '%' + w.toFixed(1);
+      sv.append(bb, ' · ' + tl(w / 100 * B));
     });
-    $('ke-norm').textContent = S.unit === 'pct'
-      ? 'Girdiğin ağırlık toplamı: ' + m.tot.toFixed(1) + ' → otomatik %100\'e normalize edildi'
-      : 'TL modunda kalemlerin toplamı bütçeni belirler';
-    $('ke-norm2').textContent = 'Toplam: ' + tl(B);
+    const used = Math.min(100, m.tot), left = Math.max(0, 100 - m.tot);
+    $('ke-norm').textContent = 'Dağıtılan: ' + tl(used / 100 * B) + ' / ' + tl(B);
+    $('ke-norm2').textContent = left > 0.01 ? 'Kalan: ' + tl(left / 100 * B) : 'Bütçenin tamamı dağıtıldı';
+    $('ke-alloc-fill').style.width = used + '%';
+    $('ke-alloc-hint').textContent = left > 0.01
+      ? 'Kalan tutar hesaba katılmaz. Bir kalemi artırınca kalan paydan kullanır.'
+      : 'Bütçe doldu: bir kalemi artırmak için önce başka bir kalemi azalt.';
 
     // katkı grafiği
     const contrib = m.ids.map(id => ({ id, c: m.sh[id] * rt(id), r: rt(id) })).sort((a, b) => b.c - a.c);
