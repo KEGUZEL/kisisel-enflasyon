@@ -97,7 +97,7 @@ window.dash = (function () {
 .ke-badge.hot{background:rgba(255,84,112,.14);color:var(--hot)}
 .ke-slv{font-size:13px;color:var(--mut);min-width:9.5rem;text-align:right}
 .ke-slv b{color:var(--fg)}
-.ke input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--grn) var(--p,0%),var(--line) var(--p,0%));outline:none;margin:4px 0}
+.ke input[type=range]{touch-action:pan-y;-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--grn) var(--p,0%),var(--line) var(--p,0%));outline:none;margin:4px 0}
 .ke input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--grn);cursor:pointer}
 .ke input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--grn);cursor:pointer}
 .ke-norm{font-size:12px;color:var(--mut);margin-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
@@ -144,8 +144,9 @@ window.dash = (function () {
 .ke-prog span.on i{animation:keFill 6s linear forwards}
 .ke-story.paused .ke-prog span.on i{animation:none;width:100%;opacity:.6}
 @keyframes keFill{from{width:0}to{width:100%}}
-.ke-slide{position:absolute;inset:0;padding:44px 22px 22px;display:flex;flex-direction:column;gap:14px;opacity:0;visibility:hidden;transform:scale(.97);transition:opacity .35s,transform .35s,visibility .35s}
-.ke-slide.on{opacity:1;visibility:visible;transform:none}
+.ke-slide{position:absolute;inset:0;padding:44px 22px 22px;display:flex;flex-direction:column;gap:14px;opacity:0;visibility:hidden;transform:none}
+.ke-slide.on{opacity:1;visibility:visible;animation:keSlide .3s ease-out}
+@keyframes keSlide{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
 .ke-slide .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.85}
 .ke-slide .xl{font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1.05;letter-spacing:-.02em}
 .ke-slide .num{font-size:clamp(60px,18vw,88px);font-weight:900;line-height:.9;letter-spacing:-.04em}
@@ -394,7 +395,7 @@ window.dash = (function () {
           <div class="ke-sharegrid" id="ke-sharegrid"></div>
           <p class="ke-foot" id="ke-png-note"></p>
         </div>
-        <p class="ke-foot">Personan, bütçende TÜFE'nin üstünde en çok puan ekleyen kaleme göre seçilir; sepetin TÜFE'nin 1 puandan fazla altındaysa "Enflasyon Bükücü" olursun. Görsel tarayıcında üretilir, hiçbir yere gönderilmez.</p>
+        <p class="ke-foot">Personan, tipik bir haneye göre bütçende en çok öne çıkan kaleme göre seçilir; sepetin TÜFE'nin 1 puandan fazla altındaysa "Enflasyon Bükücü" olursun. Görsel tarayıcında üretilir, hiçbir yere gönderilmez.</p>
       </div>
     </div>
   </div>
@@ -451,13 +452,13 @@ window.dash = (function () {
 
   // Şablon ağırlıkları (% bütçe payı) — kullanıcının seçtiği yaşam tarzı varsayımları
   const TPL = {
-    beyaz:  { ad: 'Beyaz Yakalı & Araçlı', d: 'Ulaşım, kafe/restoran, konut', ic: 'car', mode: 'mevcut',
+    beyaz:  { ad: 'Beyaz Yakalı & Araçlı', d: 'Ulaşım, kafe/restoran, konut', ic: 'car',
       w: { '01':14,'02':3,'03':5,'04':24,'05':3,'06':2,'07':20,'08':5,'09':5,'10':0,'11':12,'12':4,'13':3 } },
-    aile:   { ad: 'Çocuklu Aile', d: 'Eğitim, gıda, sağlık, konut', ic: 'users', mode: 'mevcut',
+    aile:   { ad: 'Çocuklu Aile', d: 'Eğitim, gıda, sağlık, konut', ic: 'users',
       w: { '01':24,'02':2,'03':6,'04':24,'05':4,'06':7,'07':8,'08':3,'09':3,'10':12,'11':3,'12':2,'13':2 } },
-    ogrenci:{ ad: 'Üniversite Öğrencisi', d: 'Yeni kiracı, kafe, eğlence, ulaşım', ic: 'cap', mode: 'yeni', city: 'YKKE_IST',
+    ogrenci:{ ad: 'Üniversite Öğrencisi', d: 'Kira, kafe, eğlence, ulaşım', ic: 'cap',
       w: { '01':16,'02':5,'03':6,'04':30,'05':2,'06':1,'07':12,'08':5,'09':10,'10':3,'11':8,'12':0,'13':2 } },
-    tekno:  { ad: 'Teknoloji & Oyun Tutkunu', d: 'İletişim, eğlence, kafe', ic: 'game', mode: 'mevcut',
+    tekno:  { ad: 'Teknoloji & Oyun Tutkunu', d: 'İletişim, eğlence, kafe', ic: 'game',
       w: { '01':14,'02':2,'03':4,'04':22,'05':4,'06':2,'07':6,'08':18,'09':14,'10':0,'11':10,'12':2,'13':2 } }
   };
   const PERSONA = {
@@ -477,6 +478,9 @@ window.dash = (function () {
     '13': ['Bakımlı Bütçe', 'Kuaförde bile hesap kitap yaptın.'],
     bukucu: ['Enflasyon Bükücü', 'Sepetin resmi enflasyonun altında kaldı. Saygılar.']
   };
+
+  // Tipik bir hanenin bütçe payları (%); persona, bu dağılımdan en çok saptığın kalemden seçilir
+  const BASE = { '01':25,'02':3.5,'03':6.5,'04':22,'05':8,'06':3,'07':16,'08':3.5,'09':3.5,'10':2,'11':9,'12':1,'13':5 };
 
   const S = { budget: 50000, mode: 'mevcut', city: 'YKKE_IST', unit: 'pct', tpl: 'beyaz', w: Object.assign({}, TPL.beyaz.w), tlMax: 50000, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
   const tl = (v) => new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(Math.round(v)) + ' TL';
@@ -506,7 +510,7 @@ window.dash = (function () {
       b.querySelector('b').textContent = TPL[k].ad;
       b.querySelector('small').textContent = TPL[k].d;
       b.addEventListener('click', () => {
-        S.tpl = k; S.w = Object.assign({}, TPL[k].w); S.mode = TPL[k].mode; if (TPL[k].city) S.city = TPL[k].city;
+        S.tpl = k; S.w = Object.assign({}, TPL[k].w);
         update();
       });
       tp.appendChild(b);
@@ -520,10 +524,10 @@ window.dash = (function () {
       const v = document.createElement('span');
       v.dataset.source = 'evds'; v.dataset.field = 'oran'; v.dataset.where = 'id=' + r.id; v.textContent = f2(r.oran);
       b.append(n, v);
-      b.addEventListener('click', () => { S.city = r.id; S.tpl = null; update(); });
+      b.addEventListener('click', () => { S.city = r.id; update(); });
       cityBox.appendChild(b);
     });
-    document.querySelectorAll('.ke-seg button').forEach(b => b.addEventListener('click', () => { S.mode = b.dataset.mode; S.tpl = null; update(); }));
+    document.querySelectorAll('.ke-seg button').forEach(b => b.addEventListener('click', () => { S.mode = b.dataset.mode; update(); }));
     // sliderlar
     const box = $('ke-sliders');
     cats.forEach(c => {
@@ -710,8 +714,8 @@ window.dash = (function () {
     let pk;
     if (p < H - 1) pk = 'bukucu';
     else {
-      const pos = m.ids.map(id => ({ id, e: m.sh[id] * (rt(id) - H) })).filter(x => x.e > 0).sort((a, b) => b.e - a.e);
-      pk = pos.length ? pos[0].id : (contrib[0] ? contrib[0].id : 'bukucu');
+      const sig = m.ids.map(id => ({ id, e: (m.sh[id] - (BASE[id] || 0) / 100) * rt(id) })).sort((a, b) => b.e - a.e);
+      pk = sig[0] && sig[0].e > 0 ? sig[0].id : (contrib[0] ? contrib[0].id : 'bukucu');
       if (pk === '04' && S.mode === 'yeni') pk = '04y';
     }
     const top3 = contrib.filter(x => m.sh[x.id] > 0).slice(0, 3);
