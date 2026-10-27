@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kişisel Enflasyonum · 2026 Wrapped</title>
+<meta name="description" content="Harcama sepetine göre kişisel enflasyonunu hesapla, resmi TÜFE ile karşılaştır ve 2026 Wrapped kartını paylaş. Veri: TCMB EVDS.">
+<meta property="og:title" content="Kişisel Enflasyonum · 2026 Wrapped">
+<meta property="og:description" content="Senin enflasyonun resmi TÜFE'den yüksek mi? Hesapla ve paylaş.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{--font-anthropic-sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--font-anthropic-serif:Georgia,serif;--color-bad:#ff5470;--color-fg-muted:#9d9dbb}
+html,body{margin:0;background:#06060c}
+body{padding:12px}
+#dash-root{max-width:1200px;margin:0 auto}
+.dash-skeleton{display:inline-block;width:8rem;height:1rem;border-radius:999px;background:#1c1c36}
+</style>
+<script>
+window.dash = (function () {
+  var rows = [{"id":"GENEL","seri":"TP.TUKFIY2025.GENEL","ad":"Manşet TÜFE","grup":"tufe","oran":29.73},{"id":"01","seri":"TP.TUKFIY2025.01","ad":"Market & Gıda","grup":"kategori","oran":27.62},{"id":"02","seri":"TP.TUKFIY2025.02","ad":"Alkollü İçecek & Tütün","grup":"kategori","oran":31.6},{"id":"03","seri":"TP.TUKFIY2025.03","ad":"Giyim & Moda","grup":"kategori","oran":13.23},{"id":"04","seri":"TP.TUKFIY2025.04","ad":"Konut & Faturalar","grup":"kategori","oran":39.99},{"id":"05","seri":"TP.TUKFIY2025.05","ad":"Ev Eşyası & Mobilya","grup":"kategori","oran":23.81},{"id":"06","seri":"TP.TUKFIY2025.06","ad":"Sağlık & İlaç","grup":"kategori","oran":43.27},{"id":"07","seri":"TP.TUKFIY2025.07","ad":"Araba, Akaryakıt & Ulaşım","grup":"kategori","oran":35.11},{"id":"08","seri":"TP.TUKFIY2025.08","ad":"Teknoloji, İnternet & İletişim","grup":"kategori","oran":26.52},{"id":"09","seri":"TP.TUKFIY2025.09","ad":"Eğlence, Spor, Oyun & Kültür","grup":"kategori","oran":23.36},{"id":"10","seri":"TP.TUKFIY2025.10","ad":"Eğitim & Okul","grup":"kategori","oran":48.63},{"id":"11","seri":"TP.TUKFIY2025.11","ad":"Kafe, Restoran & Otel","grup":"kategori","oran":29.53},{"id":"12","seri":"TP.TUKFIY2025.12","ad":"Sigorta & Finansal Hizmetler","grup":"kategori","oran":31.88},{"id":"13","seri":"TP.TUKFIY2025.13","ad":"Kişisel Bakım & Çeşitli Hizmetler","grup":"kategori","oran":21.88},{"id":"YKKE_TR","seri":"YKKE","ad":"Türkiye","grup":"ykke","oran":26.61},{"id":"YKKE_IST","seri":"YKKE","ad":"İstanbul","grup":"ykke","oran":35.53},{"id":"YKKE_ANK","seri":"YKKE","ad":"Ankara","grup":"ykke","oran":25.11},{"id":"YKKE_IZM","seri":"YKKE","ad":"İzmir","grup":"ykke","oran":23.71},{"id":"KFE","seri":"KFE","ad":"Konut Fiyat Endeksi","grup":"varlik","oran":22.34},{"id":"USD","seri":"USD/TRY","ad":"USD/TRY","grup":"varlik","oran":18.01},{"id":"EUR","seri":"EUR/TRY","ad":"EUR/TRY","grup":"varlik","oran":13.75},{"id":"BEK_PIYASA","seri":"Beklenti 12 ay","ad":"Piyasa Katılımcıları","grup":"beklenti","oran":23.89},{"id":"BEK_REEL","seri":"Beklenti 12 ay","ad":"Reel Sektör","grup":"beklenti","oran":31.8},{"id":"BEK_HANE","seri":"Beklenti 12 ay","ad":"Hanehalkı","grup":"beklenti","oran":43.75}];
+  var res = { status: 'ok', data: rows, columns: Object.keys(rows[0]), meta: [], refreshing: false, message: '' };
+  return {
+    data: function () { return res; },
+    onData: function (fn) {
+      fn();
+      var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fn, 150); });
+    },
+    colors: [], calc: function () {}, loader: function () {}, refresh: function () {},
+    params: function () { return {}; }, setParams: function () {}, resetParams: function () {}, setLink: function () {}
+  };
+})();
+</script>
+</head>
+<body>
+<div id="dash-root">
+<style>
+.ke{--bg:#0b0b14;--card:#14142a;--card2:#1c1c36;--line:#2a2a48;--fg:#f4f4fb;--mut:#9d9dbb;--grn:#1ed760;--pur:#8b5cf6;--hot:#ff5470;--cool:#34d399;--amb:#fbbf24;
+  background:var(--bg);color:var(--fg);font-family:var(--font-anthropic-sans);border-radius:22px;padding:clamp(16px,3vw,32px);
+  display:flex;flex-direction:column;gap:20px;font-variant-numeric:tabular-nums;position:relative;overflow:hidden}
+.ke::before{content:"";position:absolute;inset:-40% -20% auto auto;width:70%;height:80%;background:radial-gradient(closest-side,rgba(139,92,246,.22),transparent);pointer-events:none}
+.ke::after{content:"";position:absolute;inset:auto auto -40% -20%;width:70%;height:70%;background:radial-gradient(closest-side,rgba(30,215,96,.14),transparent);pointer-events:none}
+.ke>*{position:relative;z-index:1}
+.ke button{font:inherit;color:inherit;cursor:pointer}
+.ke-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+.ke-kicker{display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grn);font-weight:600}
+.ke-h1{margin:6px 0 4px;font-size:clamp(24px,4vw,38px);line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.ke-h1 span{background:linear-gradient(90deg,var(--grn),var(--pur) 60%,var(--hot));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ke-sub{margin:0;color:var(--mut);font-size:14px;max-width:62ch}
+.ke-tabs{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.ke-tabs button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ke-tabs button[aria-selected=true]{background:var(--fg);color:var(--bg)}
+.ke-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(14px,2vw,20px)}
+.ke-ttl{display:flex;align-items:center;gap:8px;font-weight:700;font-size:16px;margin:0 0 4px}
+.ke-note{color:var(--mut);font-size:13px;margin:0 0 14px}
+.ke-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:14px}
+.ke-stat{display:flex;flex-direction:column;gap:6px;min-height:150px}
+.ke-stat .lbl{font-size:13px;color:var(--mut);display:flex;align-items:center;gap:6px}
+.ke-big{font-size:clamp(40px,6vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.ke-me{background:linear-gradient(140deg,#1d1446 0%,#14142a 55%),var(--card);border-color:#4c3a8f}
+.ke-me .ke-big{background:linear-gradient(90deg,#fff,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ke-small{font-size:13px;color:var(--mut)}
+.ke-diff.up{color:var(--hot)} .ke-diff.down{color:var(--cool)}
+.ke-pill{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600}
+.ke-pill.up{background:rgba(255,84,112,.14);color:var(--hot)} .ke-pill.down{background:rgba(52,211,153,.14);color:var(--cool)}
+.ke-ctrl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:14px}
+.ke-field label{display:block;font-size:13px;color:var(--mut);margin-bottom:8px}
+.ke-money{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:0 14px}
+.ke-money input{flex:1;min-width:0;background:transparent;border:0;color:var(--fg);font:inherit;font-size:24px;font-weight:700;padding:10px 0;outline:none}
+.ke-money span{color:var(--mut);font-weight:600}
+.ke-seg{display:flex;flex-wrap:wrap;gap:8px}
+.ke-seg button,.ke-chip{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:10px 12px;text-align:left;font-size:13px;flex:1 1 12rem;display:flex;flex-direction:column;gap:2px}
+.ke-seg button b{font-size:14px}
+.ke-seg button[aria-pressed=true]{border-color:var(--grn);background:rgba(30,215,96,.08)}
+.ke-seg button .r{color:var(--mut)}
+.ke-city{display:none;margin-top:10px;gap:6px;flex-wrap:wrap}
+.ke-city.on{display:flex}
+.ke-city button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-size:13px}
+.ke-city button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.ke-tpl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:10px}
+.ke-tpl button{border:1px solid var(--line);background:var(--card2);border-radius:14px;padding:14px;text-align:left;display:flex;gap:10px;align-items:flex-start;transition:transform .15s,border-color .15s}
+.ke-tpl button:hover{transform:translateY(-2px);border-color:var(--pur)}
+.ke-tpl button[aria-pressed=true]{border-color:var(--grn);box-shadow:0 0 0 1px var(--grn) inset}
+.ke-tpl .ic{flex:none;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--pur),var(--hot))}
+.ke-tpl b{display:block;font-size:14px} .ke-tpl small{color:var(--mut);font-size:12px}
+.ke-main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr));gap:14px;align-items:start}
+.ke-shead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.ke-unit{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.ke-unit button{border:0;background:transparent;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;color:var(--mut)}
+.ke-unit button[aria-pressed=true]{background:var(--grn);color:#04130a}
+.ke-sl{padding:10px 0;border-top:1px solid var(--line)}
+.ke-sl:first-of-type{border-top:0}
+.ke-slt{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.ke-sln{font-size:14px;font-weight:600;flex:1 1 10rem}
+.ke-sln small{color:var(--mut);font-weight:400}
+.ke-badge{font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(52,211,153,.12);color:var(--cool);white-space:nowrap}
+.ke-badge.hot{background:rgba(255,84,112,.14);color:var(--hot)}
+.ke-slv{font-size:13px;color:var(--mut);min-width:9.5rem;text-align:right}
+.ke-slv b{color:var(--fg)}
+.ke input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--grn) var(--p,0%),var(--line) var(--p,0%));outline:none;margin:4px 0}
+.ke input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--grn);cursor:pointer}
+.ke input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--grn);cursor:pointer}
+.ke-norm{font-size:12px;color:var(--mut);margin-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ke-bars{display:flex;flex-direction:column;gap:9px;position:relative}
+.ke-bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;font-size:13px;cursor:default}
+.ke-bar .n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ke-bar .v{font-weight:700;text-align:right}
+.ke-bar .t{grid-column:1/-1;height:10px;background:var(--bg);border-radius:999px;overflow:hidden}
+.ke-bar .f{height:100%;border-radius:999px;background:var(--cool);transition:width .35s ease}
+.ke-bar .f.hot{background:linear-gradient(90deg,#ff8a5b,var(--hot))}
+.ke-bar .f.me{background:linear-gradient(90deg,var(--grn),var(--pur))}
+.ke-bar .f.mut{background:#4a4a6e}
+.ke-bar.me .n{font-weight:700;color:#fff}
+.ke-tip{position:absolute;pointer-events:none;background:#23233f;border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:12px;box-shadow:0 8px 24px rgba(0,0,0,.4);opacity:0;transition:opacity .12s;z-index:5;max-width:16rem}
+.ke-tip .h{color:var(--mut)}
+.ke-legend{display:flex;gap:14px;font-size:12px;color:var(--mut);margin-top:10px;flex-wrap:wrap}
+.ke-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.ke-sal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:12px}
+.ke-salc{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.ke-salc .who{font-size:13px;color:var(--mut);display:flex;justify-content:space-between;gap:6px}
+.ke-salc .amt{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.ke-salc .plus{font-size:13px;color:var(--amb)}
+.ke-salc.me{border-color:var(--pur);background:linear-gradient(160deg,#241a52,var(--card2))}
+.ke-salc .meter{height:6px;border-radius:999px;background:var(--bg);overflow:hidden}
+.ke-salc .meter div{height:100%;background:var(--amb);border-radius:999px}
+.ke-salc.me .meter div{background:linear-gradient(90deg,var(--grn),var(--pur))}
+.ke-foot{font-size:12px;color:var(--mut);line-height:1.5}
+.ke-hide{display:none!important}
+/* Wrapped */
+.ke-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:24px;align-items:start}
+.ke-stage{display:flex;flex-direction:column;gap:12px;align-items:center}
+.t-aurora{--c1:#1ed760;--c2:#ff5470;--b1:#2a1670;--b2:#0b0b14}
+.t-sunset{--c1:#ffb020;--c2:#ff2d75;--b1:#4a0d2e;--b2:#12060f}
+.t-ocean{--c1:#22d3ee;--c2:#6366f1;--b1:#0b2a4a;--b2:#050b16}
+.t-neon{--c1:#d9f99d;--c2:#a855f7;--b1:#1a1a1a;--b2:#000000}
+.ke-story{position:relative;width:100%;max-width:380px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;color:#fff;outline:none;user-select:none;-webkit-user-select:none;
+  background:radial-gradient(120% 70% at 0% 0%,color-mix(in srgb,var(--c1) 55%,transparent),transparent 55%),radial-gradient(120% 70% at 100% 100%,color-mix(in srgb,var(--c2) 55%,transparent),transparent 55%),linear-gradient(160deg,var(--b1),var(--b2) 60%);
+  box-shadow:0 30px 80px color-mix(in srgb,var(--c2) 30%,transparent);transition:box-shadow .3s}
+.ke-story:focus-visible{box-shadow:0 0 0 3px var(--grn),0 30px 80px color-mix(in srgb,var(--c2) 30%,transparent)}
+.ke-prog{position:absolute;top:12px;left:14px;right:14px;display:flex;gap:4px;z-index:3}
+.ke-prog span{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden}
+.ke-prog i{display:block;height:100%;width:0;background:#fff}
+.ke-prog span.done i{width:100%}
+.ke-prog span.on i{animation:keFill 6s linear forwards}
+.ke-story.paused .ke-prog span.on i{animation:none;width:100%;opacity:.6}
+@keyframes keFill{from{width:0}to{width:100%}}
+.ke-slide{position:absolute;inset:0;padding:44px 22px 22px;display:flex;flex-direction:column;gap:14px;opacity:0;visibility:hidden;transform:scale(.97);transition:opacity .35s,transform .35s,visibility .35s}
+.ke-slide.on{opacity:1;visibility:visible;transform:none}
+.ke-slide .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.85}
+.ke-slide .xl{font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1.05;letter-spacing:-.02em}
+.ke-slide .num{font-size:clamp(60px,18vw,88px);font-weight:900;line-height:.9;letter-spacing:-.04em}
+.ke-slide .lead{font-size:15px;line-height:1.4;opacity:.92}
+.ke-slide .lead b{font-weight:800}
+.ke-slide .box{background:rgba(0,0,0,.28);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.ke-slide .hint{margin-top:auto;font-size:11px;opacity:.7}
+.ke-rank{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:center}
+.ke-rank .r{grid-row:span 2;font-size:40px;font-weight:900;line-height:1;color:var(--c1)}
+.ke-rank .nm{font-size:15px;font-weight:800}
+.ke-rank .dt{font-size:12px;opacity:.85}
+.ke-mini{gap:8px!important}
+.ke-mini>div{display:grid;grid-template-columns:5.6rem 1fr auto;gap:8px;align-items:center;font-size:12px}
+.ke-mini u{height:8px;border-radius:999px;background:rgba(255,255,255,.15);overflow:hidden;text-decoration:none;display:block}
+.ke-mini u i{display:block;height:100%;border-radius:999px;background:rgba(255,255,255,.55);transition:width .4s}
+.ke-mini .me{font-weight:800}
+.ke-mini .me u i{background:linear-gradient(90deg,var(--c1),var(--c2))}
+.ke-slide.ke-wc{gap:9px;padding-top:40px}
+.ke-wc .brand{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.9}
+.ke-wc .persona{font-size:clamp(22px,6.5vw,28px);font-weight:900;line-height:1.05;letter-spacing:-.02em}
+.ke-wc .pdesc{font-size:12px;opacity:.85;margin-top:-3px}
+.ke-wc .box{padding:9px 12px;gap:4px}
+.ke-wc .hit{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600}
+.ke-wc .hit span:last-child{color:color-mix(in srgb,var(--c2) 35%,#fff);white-space:nowrap}
+.ke-wc .usd{font-size:14px;font-weight:700;line-height:1.3}
+.ke-wc .fine{margin-top:auto;font-size:9px;opacity:.65;display:flex;justify-content:space-between;gap:8px}
+.ke-badges{display:flex;flex-wrap:wrap;gap:6px}
+.ke-badges span{font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2)}
+.ke-tap{position:absolute;top:0;bottom:0;z-index:2;background:transparent;border:0;padding:0;-webkit-tap-highlight-color:transparent}
+.ke-tap.prev{left:0;width:30%}
+.ke-tap.next{right:0;width:70%}
+.ke-sctl{display:flex;align-items:center;gap:8px;color:var(--mut);font-size:13px}
+.ke-icbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card2);display:grid;place-items:center}
+.ke-studio{display:flex;flex-direction:column;gap:18px}
+.ke-studio h3{font-size:13px;color:var(--mut);margin:0 0 8px;font-weight:600}
+.ke-themes{display:flex;gap:10px;flex-wrap:wrap}
+.ke-themes button{width:44px;height:44px;border-radius:50%;border:2px solid transparent;
+  background:radial-gradient(circle at 25% 25%,var(--c1),transparent 60%),radial-gradient(circle at 80% 80%,var(--c2),transparent 60%),linear-gradient(160deg,var(--b1),var(--b2))}
+.ke-themes button[aria-pressed=true]{border-color:#fff;box-shadow:0 0 0 2px var(--grn)}
+.ke-toggle{display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer}
+.ke-toggle input{width:18px;height:18px;accent-color:var(--grn)}
+.ke-png{display:none;flex-direction:column;gap:10px;align-items:flex-start}
+.ke-png.on{display:flex}
+.ke-png img{max-width:220px;width:100%;border-radius:14px;border:1px solid var(--line)}
+.ke-ptabs{display:flex;gap:6px;flex-wrap:wrap}
+.ke-ptabs button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600}
+.ke-ptabs button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.ke-share{width:100%;min-height:150px;background:var(--bg);border:1px solid var(--line);border-radius:12px;color:var(--fg);font:inherit;font-size:13px;padding:12px;resize:vertical;box-sizing:border-box}
+.ke-btns{display:flex;gap:8px;flex-wrap:wrap}
+.ke-btn{border:0;border-radius:999px;padding:12px 18px;font-weight:700;background:var(--grn);color:#04130a!important;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:14px}
+.ke-btn.ghost{background:var(--card2);color:var(--fg)!important;border:1px solid var(--line)}
+.ke-sharegrid{display:flex;gap:8px;flex-wrap:wrap;width:100%;max-width:420px}
+.ke-bigshare{flex:1 1 12rem;justify-content:center;font-size:16px!important;padding:15px 22px!important}
+.ke-apps{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--mut)}
+.ke-apps i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.ke-skel{min-height:300px;display:grid;place-items:center;color:var(--mut);font-size:13px}
+.ke-skel .dot{display:inline-block;width:.375rem;height:.375rem;border-radius:50%;background:var(--color-bad);margin-right:8px}
+@media (prefers-reduced-motion: no-preference){
+  .ke-in{animation:keIn .5s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes keIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+</style>
+
+<div class="ke" id="ke">
+  <div class="ke-top">
+    <div>
+      <div class="ke-kicker" id="ke-kicker"></div>
+      <h1 class="ke-h1" id="ke-title">Kişisel enflasyonum <span>vs. resmi enflasyon</span></h1>
+      <p class="ke-sub">Harcama sepetini kur, TCMB EVDS'nin Eylül/Ekim 2026 yıllık değişim verileriyle senin enflasyonunu hesaplayalım. Hesaplama tarayıcında yapılır, hiçbir şey kaydedilmez.</p>
+    </div>
+    <div class="ke-tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="calc" id="ke-tab-calc"></button>
+      <button role="tab" aria-selected="false" data-tab="wrap" id="ke-tab-wrap"></button>
+    </div>
+  </div>
+
+  <div class="ke-skel" id="ke-skel"><span id="ke-skel-msg" class="dash-skeleton"></span></div>
+
+  <!-- HESAPLAYICI -->
+  <div id="ke-calc" class="ke-hide" style="display:flex;flex-direction:column;gap:20px">
+    <section class="ke-hero" id="ke-hero">
+      <div class="ke-card ke-stat ke-me">
+        <div class="lbl" id="ke-lbl-me"></div>
+        <div class="ke-big" id="ke-me">—</div>
+        <div class="ke-small" id="ke-me-sub"></div>
+      </div>
+      <div class="ke-card ke-stat">
+        <div class="lbl" id="ke-lbl-tufe"></div>
+        <div class="ke-big">%<span data-source="evds" data-field="oran" data-where="id=GENEL" id="ke-tufe">—</span></div>
+        <div class="ke-small">Manşet TÜFE, yıllık değişim (TP.TUKFIY2025.GENEL)</div>
+      </div>
+      <div class="ke-card ke-stat">
+        <div class="lbl" id="ke-lbl-diff"></div>
+        <div class="ke-big ke-diff" id="ke-diff">—</div>
+        <div class="ke-pill" id="ke-diff-pill"></div>
+      </div>
+    </section>
+
+    <section class="ke-ctrl">
+      <div class="ke-card ke-field">
+        <label for="ke-budget">Aylık harcama bütçen</label>
+        <div class="ke-money"><input id="ke-budget" type="number" min="0" step="1000" inputmode="numeric" value="50000"><span>TL</span></div>
+        <div class="ke-small" style="margin-top:8px" id="ke-budget-note"></div>
+      </div>
+      <div class="ke-card ke-field">
+        <label>Barınma modu (Konut kaleminin enflasyonunu belirler)</label>
+        <div class="ke-seg">
+          <button type="button" data-mode="mevcut" aria-pressed="true"><b>Mevcut kiracı / ev sahibi</b><span class="r">Konut & faturalar · %<span data-source="evds" data-field="oran" data-where="id=04" class="ke-r04">—</span></span></button>
+          <button type="button" data-mode="yeni" aria-pressed="false"><b>Bu yıl yeni ev kiraladım</b><span class="r">Yeni Kiracı Kira Endeksi (YKKE)</span></button>
+        </div>
+        <div class="ke-city" id="ke-city" data-source="evds"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="ke-ttl" id="ke-tpl-ttl"></div>
+      <p class="ke-note">Tek tıkla sepeti doldur, sonra slider'larla kendine göre ayarla.</p>
+      <div class="ke-tpl" id="ke-tpl"></div>
+    </section>
+
+    <section class="ke-main">
+      <div class="ke-card">
+        <div class="ke-shead">
+          <div>
+            <div class="ke-ttl" id="ke-sl-ttl"></div>
+            <p class="ke-note" style="margin-bottom:6px">Rozetler: kalemin resmi yıllık artışı. Kırmızı = TÜFE'nin üstünde.</p>
+          </div>
+          <div class="ke-unit" role="group" aria-label="Birim">
+            <button type="button" data-unit="pct" aria-pressed="true">%</button>
+            <button type="button" data-unit="tl" aria-pressed="false">TL</button>
+          </div>
+        </div>
+        <div id="ke-sliders"></div>
+        <div class="ke-norm"><span id="ke-norm"></span><span id="ke-norm2"></span></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="ke-card" style="position:relative">
+          <div class="ke-ttl" id="ke-c-ttl"></div>
+          <p class="ke-note">Her kalemin kişisel enflasyonuna kattığı puan (bütçe payı × kalem enflasyonu).</p>
+          <div class="ke-bars" id="ke-contrib" data-source="evds"></div>
+          <div class="ke-legend"><span><i style="background:linear-gradient(90deg,#ff8a5b,#ff5470)"></i>TÜFE'nin üstünde</span><span><i style="background:#34d399"></i>TÜFE'nin altında</span></div>
+          <div class="ke-tip" id="ke-tip1"></div>
+        </div>
+        <div class="ke-card" style="position:relative">
+          <div class="ke-ttl" id="ke-r-ttl"></div>
+          <p class="ke-note">Senin sepetin; döviz, konut fiyatı ve kira karşısında yıllık değişim.</p>
+          <div class="ke-bars" id="ke-ref" data-source="evds"></div>
+          <div class="ke-tip" id="ke-tip2"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ke-card">
+      <div class="ke-ttl" id="ke-s-ttl"></div>
+      <p class="ke-note" id="ke-s-note"></p>
+      <div class="ke-sal" id="ke-sal">
+        <div class="ke-salc me"><div class="who"><span>Kendi enflasyon hızınla</span><b id="ke-s-me-r">—</b></div><div class="amt" id="ke-s-me">—</div><div class="plus" id="ke-s-me-p"></div><div class="meter"><div id="ke-s-me-m"></div></div></div>
+        <div class="ke-salc"><div class="who"><span>TCMB piyasa katılımcıları</span><b>%<span data-source="evds" data-field="oran" data-where="id=BEK_PIYASA">—</span></b></div><div class="amt" id="ke-s-pi">—</div><div class="plus" id="ke-s-pi-p"></div><div class="meter"><div id="ke-s-pi-m"></div></div></div>
+        <div class="ke-salc"><div class="who"><span>Reel sektör</span><b>%<span data-source="evds" data-field="oran" data-where="id=BEK_REEL">—</span></b></div><div class="amt" id="ke-s-re">—</div><div class="plus" id="ke-s-re-p"></div><div class="meter"><div id="ke-s-re-m"></div></div></div>
+        <div class="ke-salc"><div class="who"><span>Sokaktaki vatandaş (hanehalkı)</span><b>%<span data-source="evds" data-field="oran" data-where="id=BEK_HANE">—</span></b></div><div class="amt" id="ke-s-ha">—</div><div class="plus" id="ke-s-ha-p"></div><div class="meter"><div id="ke-s-ha-m"></div></div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- WRAPPED -->
+  <div id="ke-wrapv" class="ke-hide">
+    <div class="ke-wrap">
+      <div class="ke-stage">
+        <div class="ke-story t-aurora paused" id="ke-story" tabindex="0" aria-label="2026 Wrapped hikâyesi; ok tuşlarıyla gezin, boşlukla oynat/duraklat">
+          <div class="ke-prog" id="ke-prog"></div>
+
+          <section class="ke-slide">
+            <div class="k">2026 Wrapped</div>
+            <div class="xl" style="margin-top:auto">2026'da cüzdanın neler yaşadı?</div>
+            <div class="lead">Sepetine göre hazırlanmış kişisel enflasyon raporun hazır. Veri: TCMB EVDS, Eylül/Ekim 2026.</div>
+            <div class="hint">Dokun ve ilerle →</div>
+          </section>
+
+          <section class="ke-slide">
+            <div class="k">Bu yıl senin enflasyonun</div>
+            <div class="num" id="ke-s1-num" style="margin-top:auto">—</div>
+            <div class="lead">Resmi TÜFE: <b>%<span data-source="evds" data-field="oran" data-where="id=GENEL" id="ke-s1-tufe">—</span></b></div>
+            <div class="xl" id="ke-s1-diff" style="font-size:clamp(20px,6vw,26px)">—</div>
+            <div class="hint" id="ke-s1-hint"></div>
+          </section>
+
+          <section class="ke-slide">
+            <div class="k">Yılın en sert darbeleri</div>
+            <div class="xl">Cüzdanını en çok bunlar yordu</div>
+            <div class="box" id="ke-s2-list" data-source="evds" style="margin-top:auto"></div>
+            <div class="hint">Puan = bütçe payı × kalemin yıllık enflasyonu</div>
+          </section>
+
+          <section class="ke-slide">
+            <div class="k">Dolar bazında</div>
+            <div class="num" id="ke-s3-num" style="margin-top:auto">—</div>
+            <div class="lead" id="ke-s3-lead"></div>
+            <div class="box ke-mini" id="ke-s3-mini" data-source="evds"></div>
+            <div class="hint">USD/TRY yıllık %<span data-source="evds" data-field="oran" data-where="id=USD" id="ke-s3-usd">—</span> · dolar bazlı = (1 + senin) ÷ (1 + kur) − 1</div>
+          </section>
+
+          <section class="ke-slide">
+            <div class="k">2027'ye bakış</div>
+            <div class="xl" id="ke-s4-xl" style="margin-top:auto">—</div>
+            <div class="lead" id="ke-s4-lead"></div>
+            <div class="box ke-mini">
+              <div class="me"><span>Senin hızın</span><u><i id="ke-s4-me-b"></i></u><b id="ke-s4-me">—</b></div>
+              <div><span>Piyasa</span><u><i id="ke-s4-pi-b"></i></u><b>%<span data-source="evds" data-field="oran" data-where="id=BEK_PIYASA" id="ke-s4-pi">—</span></b></div>
+              <div><span>Reel sektör</span><u><i id="ke-s4-re-b"></i></u><b>%<span data-source="evds" data-field="oran" data-where="id=BEK_REEL" id="ke-s4-re">—</span></b></div>
+              <div><span>Hanehalkı</span><u><i id="ke-s4-ha-b"></i></u><b>%<span data-source="evds" data-field="oran" data-where="id=BEK_HANE" id="ke-s4-ha">—</span></b></div>
+            </div>
+            <div class="hint">Ekim 2026, 12 ay sonrası enflasyon beklentileri</div>
+          </section>
+
+          <section class="ke-slide ke-wc">
+            <div class="brand"><span>2026 Wrapped</span><span>Ekonomik özetin</span></div>
+            <div><div style="font-size:11px;opacity:.8;margin-bottom:3px">Bu yılki ekonomik personan</div><div class="persona" id="ke-w-persona">—</div></div>
+            <div class="pdesc" id="ke-w-pdesc"></div>
+            <div><div style="font-size:11px;opacity:.8">Kişisel enflasyonun</div><div class="num" id="ke-w-me" style="font-size:clamp(48px,14vw,70px)">—</div><div style="font-size:12px;opacity:.9;margin-top:4px" id="ke-w-vs"></div></div>
+            <div class="box"><div class="k">En çok darbe vuran 2 kalem</div><div id="ke-w-hits" data-source="evds"></div></div>
+            <div class="box"><div class="k">Dolar bazında</div><div class="usd" id="ke-w-usd">—</div></div>
+            <div class="box"><div class="k">2027'de bütçen</div><div class="usd" id="ke-w-2027">—</div></div>
+            <div class="ke-badges" id="ke-w-badges"></div>
+            <div class="fine"><span>Kaynak: TCMB EVDS · Eyl/Eki 2026</span><span>#KişiselEnflasyonum</span></div>
+          </section>
+
+          <button type="button" class="ke-tap prev" id="ke-tprev" aria-label="Önceki slayt"></button>
+          <button type="button" class="ke-tap next" id="ke-tnext" aria-label="Sonraki slayt"></button>
+        </div>
+        <div class="ke-sctl">
+          <button type="button" class="ke-icbtn" id="ke-prev" aria-label="Önceki slayt"></button>
+          <button type="button" class="ke-icbtn" id="ke-play" aria-label="Oynat / duraklat"></button>
+          <button type="button" class="ke-icbtn" id="ke-next" aria-label="Sonraki slayt"></button>
+          <span id="ke-scount">1 / 6</span>
+        </div>
+      </div>
+
+      <div class="ke-studio">
+        <div class="ke-ttl" id="ke-sh-ttl"></div>
+        <div><h3>Tema</h3><div class="ke-themes" id="ke-themes"></div></div>
+        <div><h3>Görsel formatı</h3><div class="ke-ptabs" id="ke-fmt"><button type="button" data-fmt="story">Story (9:16)</button><button type="button" data-fmt="square">Gönderi (1:1)</button></div></div>
+        <label class="ke-toggle"><input type="checkbox" id="ke-hide" checked> TL tutarlarını gizle (sadece yüzdeler görünsün)</label>
+        <div class="ke-png on" id="ke-png">
+          <img id="ke-png-img" alt="2026 Wrapped paylaşım görseli">
+          <div class="ke-sharegrid" id="ke-sharegrid"></div>
+          <p class="ke-foot" id="ke-png-note"></p>
+        </div>
+        <p class="ke-foot">Personan, bütçende TÜFE'nin üstünde en çok puan ekleyen kaleme göre seçilir; sepetin TÜFE'nin 1 puandan fazla altındaysa "Enflasyon Bükücü" olursun. Görsel tarayıcında üretilir, hiçbir yere gönderilmez.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="ke-foot">Veri: TCMB EVDS, TÜFE (2025=100) ana harcama grupları yıllık % değişim, Yeni Kiracı Kira Endeksi, Konut Fiyat Endeksi, döviz kurları ve Ekim 2026 Piyasa Katılımcıları / Reel Kesim / Hanehalkı 12 ay sonrası enflasyon beklentileri. Kişisel enflasyon = Σ (kalemin bütçe payı × kalemin yıllık enflasyonu); ağırlıklar otomatik olarak %100'e normalize edilir.</p>
+</div>
+
+<script>
+(function(){
+  const $ = (s) => document.getElementById(s);
+  const IC = {
+    up:'<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+    wallet:'<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
+    spark:'<path d="M12 3l1.9 5.8L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.2z"/><path d="M19 3v4M17 5h4"/>',
+    car:'<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>',
+    users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    cap:'<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>',
+    game:'<line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258A4 4 0 0 0 17.32 5z"/>',
+    sliders:'<line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="2" x2="6" y1="14" y2="14"/><line x1="10" x2="14" y1="8" y2="8"/><line x1="18" x2="22" y1="16" y2="16"/>',
+    flame:'<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>',
+    dollar:'<line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+    share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>',
+    calc:'<rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01M16 14v4"/>',
+    landmark:'<line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/>',
+    copy:'<rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+    back:'<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+    image:'<rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>',
+    download:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
+    chevL:'<path d="m15 18-6-6 6-6"/>',
+    chevR:'<path d="m9 18 6-6-6-6"/>',
+    play:'<polygon points="6 3 20 12 6 21 6 3"/>',
+    pause:'<rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/>',
+    ext:'<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+    insta:'<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>',
+    wa:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>',
+    xlogo:'<path d="M4 4l11.7 16H20L8.3 4z"/><path d="M4 20l6.8-6.8M13.2 10.8 20 4"/>',
+    scale:'<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>'
+  };
+  const ico = (n, s) => '<svg width="' + (s || 18) + '" height="' + (s || 18) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + IC[n] + '</svg>';
+  const setIc = (id, n, txt) => { const el = $(id); el.innerHTML = ico(n); el.appendChild(document.createTextNode(' ' + txt)); };
+  setIc('ke-kicker', 'spark', '2026 Wrapped · TCMB EVDS');
+  setIc('ke-tab-calc', 'calc', 'Hesapla');
+  setIc('ke-tab-wrap', 'share', 'Wrapped kartım');
+  setIc('ke-lbl-me', 'wallet', 'Senin kişisel enflasyonun');
+  setIc('ke-lbl-tufe', 'landmark', 'Resmi TÜFE');
+  setIc('ke-lbl-diff', 'scale', 'Aradaki fark');
+  setIc('ke-tpl-ttl', 'spark', 'Hızlı yaşam tarzı şablonları');
+  setIc('ke-sl-ttl', 'sliders', 'Bütçe dağılımın');
+  setIc('ke-c-ttl', 'flame', 'Enflasyonunu kim şişiriyor?');
+  setIc('ke-r-ttl', 'dollar', 'Referans varlıklar karşısında');
+  setIc('ke-s-ttl', 'up', "2027'de maaşın / bütçen ne olmalı?");
+  setIc('ke-sh-ttl', 'share', 'Paylaş');
+  $('ke-prev').innerHTML = ico('chevL'); $('ke-next').innerHTML = ico('chevR');
+
+  // Şablon ağırlıkları (% bütçe payı) — kullanıcının seçtiği yaşam tarzı varsayımları
+  const TPL = {
+    beyaz:  { ad: 'Beyaz Yakalı & Araçlı', d: 'Ulaşım, kafe/restoran, konut', ic: 'car', mode: 'mevcut',
+      w: { '01':14,'02':3,'03':5,'04':24,'05':3,'06':2,'07':20,'08':5,'09':5,'10':0,'11':12,'12':4,'13':3 } },
+    aile:   { ad: 'Çocuklu Aile', d: 'Eğitim, gıda, sağlık, konut', ic: 'users', mode: 'mevcut',
+      w: { '01':24,'02':2,'03':6,'04':24,'05':4,'06':7,'07':8,'08':3,'09':3,'10':12,'11':3,'12':2,'13':2 } },
+    ogrenci:{ ad: 'Üniversite Öğrencisi', d: 'Yeni kiracı, kafe, eğlence, ulaşım', ic: 'cap', mode: 'yeni', city: 'YKKE_IST',
+      w: { '01':16,'02':5,'03':6,'04':30,'05':2,'06':1,'07':12,'08':5,'09':10,'10':3,'11':8,'12':0,'13':2 } },
+    tekno:  { ad: 'Teknoloji & Oyun Tutkunu', d: 'İletişim, eğlence, kafe', ic: 'game', mode: 'mevcut',
+      w: { '01':14,'02':2,'03':4,'04':22,'05':4,'06':2,'07':6,'08':18,'09':14,'10':0,'11':10,'12':2,'13':2 } }
+  };
+  const PERSONA = {
+    '01': ['Market Fişi Avcısı', 'Sepetin kasadaki her bip sesinde biraz daha ağırlaştı.'],
+    '02': ['Tütün Vergisi Gönüllüsü', 'Bandrollü ürünlere sadakatin hazineye yaradı.'],
+    '03': ['Sezon Sonu Stratejisti', 'Gardırobun enflasyonu indirimle dövdü.'],
+    '04': ['Ev Sahibinin Emeklilik Fonu', 'Kira ve faturalar bütçenin patronu oldu.'],
+    '04y': ['Yeni Kontrat Gazisi', 'Bu yıl emlakçıyla tanıştın; sonuç ortada.'],
+    '05': ['Kampanya Mobilyacısı', 'Evini döşerken taksit sayısını da döşedin.'],
+    '06': ['Eczane VIP Üyesi', 'Sağlık kalemi yılın en hızlı koşucularından.'],
+    '07': ['Pompa ve Sanayi Müdavimi', 'Akaryakıt fişlerin koleksiyon olacak uzunlukta.'],
+    '08': ['Abonelik Koleksiyoncusu', 'Her zam bildirimi yeni bir push notification.'],
+    '09': ['Sezon Bileti Sahibi', 'Eğlenceden vazgeçmedin, cüzdan da vazgeçmedi.'],
+    '10': ['Özel Okul Sponsoru', 'Eğitim, yılın en çok zamlanan kalemi oldu.'],
+    '11': ['Latte Ekonomisti', 'Kafe hesabı, iktisat dersi kadar öğretici.'],
+    '12': ['Poliçe Koleksiyoncusu', 'Sigorta primleri seni hiç unutmadı.'],
+    '13': ['Bakımlı Bütçe', 'Kuaförde bile hesap kitap yaptın.'],
+    bukucu: ['Enflasyon Bükücü', 'Sepetin resmi enflasyonun altında kaldı. Saygılar.']
+  };
+
+  const S = { budget: 50000, mode: 'mevcut', city: 'YKKE_IST', unit: 'pct', tpl: 'beyaz', w: Object.assign({}, TPL.beyaz.w), tlMax: 50000, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
+  const tl = (v) => new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(Math.round(v)) + ' TL';
+  const f2 = (v) => v.toFixed(2);
+  const sgn = (v) => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2);
+
+  let R = {}, cats = [], built = false, lastShare = '', WR = null;
+
+  function hr() { return S.mode === 'mevcut' ? R['04'].oran : R[S.city].oran; }
+  function rt(id) { return id === '04' ? hr() : R[id].oran; }
+  function calc() {
+    const ids = cats.map(c => c.id);
+    const tot = ids.reduce((a, id) => a + (S.w[id] || 0), 0);
+    const sh = {};
+    ids.forEach(id => { sh[id] = tot > 0 ? (S.w[id] || 0) / tot : 0; });
+    const p = ids.reduce((a, id) => a + sh[id] * rt(id), 0);
+    return { ids, tot, sh, p, H: R.GENEL.oran };
+  }
+
+  function build() {
+    // şablonlar
+    const tp = $('ke-tpl');
+    Object.keys(TPL).forEach(k => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.dataset.tpl = k;
+      b.innerHTML = '<span class="ic">' + ico(TPL[k].ic, 20) + '</span><span><b></b><small></small></span>';
+      b.querySelector('b').textContent = TPL[k].ad;
+      b.querySelector('small').textContent = TPL[k].d;
+      b.addEventListener('click', () => {
+        S.tpl = k; S.w = Object.assign({}, TPL[k].w); S.mode = TPL[k].mode; if (TPL[k].city) S.city = TPL[k].city;
+        update();
+      });
+      tp.appendChild(b);
+    });
+    // şehirler
+    const cityBox = $('ke-city');
+    Object.values(R).filter(r => r.grup === 'ykke').forEach(r => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.dataset.city = r.id;
+      const n = document.createElement('span'); n.textContent = r.ad + ' %';
+      const v = document.createElement('span');
+      v.dataset.source = 'evds'; v.dataset.field = 'oran'; v.dataset.where = 'id=' + r.id; v.textContent = f2(r.oran);
+      b.append(n, v);
+      b.addEventListener('click', () => { S.city = r.id; S.tpl = null; update(); });
+      cityBox.appendChild(b);
+    });
+    document.querySelectorAll('.ke-seg button').forEach(b => b.addEventListener('click', () => { S.mode = b.dataset.mode; S.tpl = null; update(); }));
+    // sliderlar
+    const box = $('ke-sliders');
+    cats.forEach(c => {
+      const row = document.createElement('div');
+      row.className = 'ke-sl'; row.dataset.id = c.id;
+      row.innerHTML = '<div class="ke-slt"><span class="ke-sln"></span><span class="ke-badge">%<span class="b"></span></span><span class="ke-slv"></span></div><input type="range">';
+      row.querySelector('.ke-sln').textContent = c.ad;
+      if (c.id === '04') { const sm = document.createElement('small'); sm.className = 'mode'; row.querySelector('.ke-sln').append(' ', sm); }
+      const b = row.querySelector('.b');
+      b.dataset.source = 'evds'; b.dataset.field = 'oran'; b.dataset.where = 'id=' + c.id;
+      const inp = row.querySelector('input');
+      inp.setAttribute('aria-label', c.ad);
+      inp.addEventListener('input', () => onSlide(c.id, +inp.value));
+      box.appendChild(row);
+    });
+    // birim
+    document.querySelectorAll('.ke-unit button').forEach(b => b.addEventListener('click', () => {
+      const m = calc();
+      S.unit = b.dataset.unit;
+      cats.forEach(c => { S.w[c.id] = Math.round(m.sh[c.id] * 1000) / 10; });
+      S.tlMax = Math.max(10000, Math.ceil(S.budget / 5000) * 5000);
+      update();
+    }));
+    const bi = $('ke-budget');
+    bi.addEventListener('input', () => {
+      S.budget = Math.max(0, +bi.value || 0);
+      S.tlMax = Math.max(10000, Math.ceil(S.budget / 5000) * 5000);
+      update();
+    });
+    // sekmeler
+    document.querySelectorAll('.ke-tabs button').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+    buildWrapped();
+    tipify('ke-contrib', 'ke-tip1');
+    tipify('ke-ref', 'ke-tip2');
+  }
+
+  function showTab(t) {
+    document.querySelectorAll('.ke-tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === t)));
+    $('ke-calc').classList.toggle('ke-hide', t !== 'calc');
+    $('ke-wrapv').classList.toggle('ke-hide', t !== 'wrap');
+    if (t === 'wrap') { storyGo(0); setPlaying(!RM); if ($('ke-png').classList.contains('on')) makePNG(); }
+    else if (built) setPlaying(false);
+  }
+
+  function onSlide(id, v) {
+    if (S.unit === 'pct') {
+      S.w[id] = v;
+    } else {
+      const m = calc();
+      const t = {};
+      cats.forEach(c => { t[c.id] = m.sh[c.id] * S.budget; });
+      t[id] = v;
+      const B = cats.reduce((a, c) => a + t[c.id], 0);
+      S.budget = Math.round(B);
+      cats.forEach(c => { S.w[c.id] = B > 0 ? t[c.id] / B * 100 : 0; });
+    }
+    S.tpl = null;
+    update();
+  }
+
+  function tipify(boxId, tipId) {
+    const box = $(boxId), tip = $(tipId), card = box.parentElement;
+    box.addEventListener('mousemove', (e) => {
+      const row = e.target.closest('.ke-bar');
+      if (!row || !row.dataset.tip) { tip.style.opacity = 0; return; }
+      tip.innerHTML = '';
+      const h = document.createElement('div'); h.className = 'h'; h.textContent = row.dataset.th;
+      const v = document.createElement('div'); v.textContent = row.dataset.tip;
+      tip.append(h, v);
+      const r = card.getBoundingClientRect();
+      let x = e.clientX - r.left + 12, y = e.clientY - r.top + 12;
+      tip.style.opacity = 1;
+      const tw = tip.offsetWidth;
+      if (x + tw > r.width - 8) x = Math.max(8, e.clientX - r.left - tw - 12);
+      tip.style.left = x + 'px'; tip.style.top = y + 'px';
+    });
+    box.addEventListener('mouseleave', () => { tip.style.opacity = 0; });
+  }
+
+  function bars(boxId, items, max) {
+    const box = $(boxId);
+    box.innerHTML = '';
+    items.forEach(it => {
+      const row = document.createElement('div');
+      row.className = 'ke-bar' + (it.me ? ' me' : '');
+      row.dataset.th = it.n; row.dataset.tip = it.tip;
+      const n = document.createElement('span'); n.className = 'n'; n.textContent = it.n;
+      const v = document.createElement('span'); v.className = 'v'; v.textContent = it.v;
+      const t = document.createElement('div'); t.className = 't';
+      const f = document.createElement('div'); f.className = 'f ' + (it.cls || '');
+      f.style.width = (max > 0 ? Math.max(0, it.x) / max * 100 : 0) + '%';
+      t.appendChild(f);
+      row.append(n, v, t);
+      box.appendChild(row);
+    });
+  }
+
+  function update() {
+    const m = calc(), B = S.budget, H = m.H, p = m.p, diff = p - H;
+    const has = m.tot > 0;
+
+    // üst panel
+    $('ke-tufe').textContent = f2(H);
+    $('ke-me').textContent = has ? '%' + f2(p) : '—';
+    $('ke-me-sub').textContent = has ? 'Bu hızla ' + tl(B) + "'lik aylık sepetin bir yılda " + tl(B * (1 + p / 100)) + ' olur.' : 'Sepetine en az bir kalem ekle.';
+    const de = $('ke-diff');
+    de.textContent = has ? sgn(diff) + ' puan' : '—';
+    de.className = 'ke-big ke-diff ' + (diff >= 0 ? 'up' : 'down');
+    const pill = $('ke-diff-pill');
+    pill.className = 'ke-pill ' + (diff >= 0 ? 'up' : 'down');
+    pill.textContent = has ? (Math.abs(diff).toFixed(2) + ' puan daha ' + (diff >= 0 ? 'fazla' : 'az') + ' zamlandın!') : '';
+    $('ke-budget-note').textContent = 'Yıllık ek maliyet: ' + tl(B * p / 100 * 12) + ' (aylık +' + tl(B * p / 100) + ')';
+    const bi = $('ke-budget');
+    if (document.activeElement !== bi) bi.value = B;
+
+    // barınma
+    document.querySelectorAll('.ke-seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === S.mode)));
+    $('ke-city').classList.toggle('on', S.mode === 'yeni');
+    document.querySelectorAll('#ke-city button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.city === S.city)));
+    document.querySelectorAll('.ke-r04').forEach(el => { el.textContent = f2(R['04'].oran); });
+    document.querySelectorAll('#ke-tpl button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tpl === S.tpl)));
+    document.querySelectorAll('.ke-unit button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.unit === S.unit)));
+
+    // sliderlar
+    cats.forEach(c => {
+      const row = document.querySelector('.ke-sl[data-id="' + c.id + '"]');
+      const inp = row.querySelector('input');
+      const r = rt(c.id);
+      const bid = c.id === '04' && S.mode === 'yeni' ? S.city : c.id;
+      const b = row.querySelector('.b');
+      b.dataset.where = 'id=' + bid; b.textContent = f2(r);
+      row.querySelector('.ke-badge').classList.toggle('hot', r > H);
+      if (c.id === '04') row.querySelector('.mode').textContent = S.mode === 'mevcut' ? '(mevcut düzen)' : '(yeni kira · ' + R[S.city].ad + ')';
+      if (S.unit === 'pct') { inp.min = 0; inp.max = 60; inp.step = 0.5; }
+      else { inp.min = 0; inp.max = S.tlMax; inp.step = 250; }
+      const val = S.unit === 'pct' ? (S.w[c.id] || 0) : Math.round(m.sh[c.id] * B);
+      if (document.activeElement !== inp) inp.value = val;
+      inp.style.setProperty('--p', (Math.min(1, (+inp.value - inp.min) / (inp.max - inp.min)) * 100) + '%');
+      const sv = row.querySelector('.ke-slv');
+      sv.innerHTML = '';
+      const bb = document.createElement('b'); bb.textContent = '%' + (m.sh[c.id] * 100).toFixed(1);
+      sv.append(bb, ' · ' + tl(m.sh[c.id] * B));
+    });
+    $('ke-norm').textContent = S.unit === 'pct'
+      ? 'Girdiğin ağırlık toplamı: ' + m.tot.toFixed(1) + ' → otomatik %100\'e normalize edildi'
+      : 'TL modunda kalemlerin toplamı bütçeni belirler';
+    $('ke-norm2').textContent = 'Toplam: ' + tl(B);
+
+    // katkı grafiği
+    const contrib = m.ids.map(id => ({ id, c: m.sh[id] * rt(id), r: rt(id) })).sort((a, b) => b.c - a.c);
+    const cmax = contrib.length ? contrib[0].c : 0;
+    bars('ke-contrib', contrib.filter(x => m.sh[x.id] > 0).map(x => ({
+      n: R[x.id].ad, v: x.c.toFixed(2) + ' puan', x: x.c, cls: x.r > H ? 'hot' : '',
+      tip: 'Pay %' + (m.sh[x.id] * 100).toFixed(1) + ' × enflasyon %' + f2(x.r) + ' = ' + x.c.toFixed(2) + ' puan · yıllık +' + tl(m.sh[x.id] * B * x.r / 100 * 12)
+    })), cmax);
+
+    // referanslar
+    const refs = [
+      { n: 'Senin sepetin', x: p, me: true, cls: 'me' },
+      { n: 'Resmi TÜFE', x: H, cls: 'mut' },
+      { n: 'Yeni kira · ' + R[S.city].ad, x: R[S.city].oran, cls: R[S.city].oran > p ? 'hot' : 'mut' },
+      { n: 'Konut fiyatları', x: R.KFE.oran, cls: 'mut' },
+      { n: 'USD/TRY', x: R.USD.oran, cls: 'mut' },
+      { n: 'EUR/TRY', x: R.EUR.oran, cls: 'mut' }
+    ];
+    const rmax = Math.max.apply(null, refs.map(r => r.x));
+    bars('ke-ref', refs.map(r => ({
+      n: r.n, v: '%' + f2(r.x), x: r.x, cls: r.cls, me: r.me,
+      tip: r.me ? 'Senin kişisel enflasyonun' : (p - r.x >= 0 ? 'Sepetin bundan ' + (p - r.x).toFixed(2) + ' puan hızlı pahalandı' : 'Sepetin bundan ' + (r.x - p).toFixed(2) + ' puan yavaş pahalandı')
+    })), rmax);
+
+    // maaş simülatörü
+    const sims = [['me', p], ['pi', R.BEK_PIYASA.oran], ['re', R.BEK_REEL.oran], ['ha', R.BEK_HANE.oran]];
+    const smax = Math.max.apply(null, sims.map(s => s[1]));
+    $('ke-s-me-r').textContent = has ? '%' + f2(p) : '—';
+    sims.forEach(([k, r]) => {
+      $('ke-s-' + k).textContent = tl(B * (1 + r / 100));
+      $('ke-s-' + k + '-p').textContent = '+' + tl(B * r / 100) + ' / ay · +' + tl(B * r / 100 * 12) + ' / yıl';
+      $('ke-s-' + k + '-m').style.width = (smax > 0 ? r / smax * 100 : 0) + '%';
+    });
+    $('ke-s-note').textContent = 'Bugünkü ' + tl(B) + "'lik aylık bütçenin alım gücünü korumak için 12 ay sonra eline geçmesi gereken tutar (Ekim 2026 beklenti anketleri).";
+
+    // wrapped
+    let pk;
+    if (p < H - 1) pk = 'bukucu';
+    else {
+      const pos = m.ids.map(id => ({ id, e: m.sh[id] * (rt(id) - H) })).filter(x => x.e > 0).sort((a, b) => b.e - a.e);
+      pk = pos.length ? pos[0].id : (contrib[0] ? contrib[0].id : 'bukucu');
+      if (pk === '04' && S.mode === 'yeni') pk = '04y';
+    }
+    const top3 = contrib.filter(x => m.sh[x.id] > 0).slice(0, 3);
+    const usdReal = ((1 + p / 100) / (1 + R.USD.oran / 100) - 1) * 100;
+    const short = (id) => R[id].ad.split(/[,&]/)[0].trim();
+    const badges = [];
+    if (p < H - 1) badges.push('🛡️ TÜFE\'yi yendi'); else if (p > H + 1) badges.push('🔥 TÜFE üstü');
+    if (p > R.USD.oran) badges.push('💵 Dolardan hızlı');
+    if (S.mode === 'yeni') badges.push('🔑 Yeni kontrat · ' + R[S.city].ad);
+    if (p > R.BEK_HANE.oran) badges.push('😱 Sokaktan da karamsar');
+    else if (top3[0] && top3[0].r > 40) badges.push('🚨 Kırmızı kalem: ' + short(top3[0].id));
+    if ((m.sh['10'] || 0) >= 0.08) badges.push('🎒 Okul aile birliği');
+    const exps = [['Piyasa katılımcıları', R.BEK_PIYASA.oran], ['Reel sektör', R.BEK_REEL.oran], ['Hanehalkı', R.BEK_HANE.oran]];
+    const near = exps.slice().sort((a, b) => Math.abs(a[1] - p) - Math.abs(b[1] - p))[0];
+    WR = { pk, persona: PERSONA[pk], p, H, diff, top3, usdReal, badges: badges.slice(0, 3), B, sh: m.sh, near, has };
+    renderWrapped();
+  }
+
+  const THEMES = {
+    aurora: { ad: 'Aurora', c1: '#1ed760', c2: '#ff5470', b1: '#2a1670', b2: '#0b0b14' },
+    sunset: { ad: 'Gün batımı', c1: '#ffb020', c2: '#ff2d75', b1: '#4a0d2e', b2: '#12060f' },
+    ocean: { ad: 'Okyanus', c1: '#22d3ee', c2: '#6366f1', b1: '#0b2a4a', b2: '#050b16' },
+    neon: { ad: 'Neon', c1: '#d9f99d', c2: '#a855f7', b1: '#1a1a1a', b2: '#000000' }
+  };
+  const RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const NS = 6;
+  let si = 0, playing = false, counting = false, pngFile = null;
+
+  const usdLine = (w) => w.usdReal >= 0
+    ? 'Yaşam maliyetin dolar bazında %' + f2(w.usdReal) + ' arttı!'
+    : 'Yaşam maliyetin dolar bazında %' + f2(-w.usdReal) + ' ucuzladı.';
+  const budgetLine = (w) => S.hideTL ? 'Bütçen %' + f2(w.p) + ' büyümeli' : tl(w.B) + ' → ' + tl(w.B * (1 + w.p / 100));
+
+  function mini(id, rows) {
+    const box = $(id); box.innerHTML = '';
+    const mx = Math.max.apply(null, rows.map(r => r[1]));
+    rows.forEach(([n, v, me]) => {
+      const d = document.createElement('div'); if (me) d.className = 'me';
+      const a = document.createElement('span'); a.textContent = n;
+      const u = document.createElement('u'); const i = document.createElement('i');
+      i.style.width = (mx > 0 ? Math.max(0, v) / mx * 100 : 0) + '%'; u.appendChild(i);
+      const b = document.createElement('b'); b.textContent = '%' + f2(v);
+      d.append(a, u, b); box.appendChild(d);
+    });
+  }
+
+  function renderWrapped() {
+    const w = WR; if (!w) return;
+    // 1: kişisel enflasyon
+    if (!counting) $('ke-s1-num').textContent = w.has ? '%' + f2(w.p) : '—';
+    $('ke-s1-tufe').textContent = f2(w.H);
+    $('ke-s1-diff').textContent = w.diff >= 0
+      ? 'Resmi rakamdan ' + Math.abs(w.diff).toFixed(2) + ' puan daha fazla zamlandın.'
+      : 'Resmi rakamdan ' + Math.abs(w.diff).toFixed(2) + ' puan daha az zamlandın. Tebrikler!';
+    $('ke-s1-hint').textContent = S.hideTL ? '' : 'Aylık ' + tl(w.B) + "'lik sepetin yılda +" + tl(w.B * w.p / 100 * 12) + ' ek maliyet demek.';
+    // 2: en çok vuranlar
+    const l2 = $('ke-s2-list'); l2.innerHTML = '';
+    w.top3.forEach((x, i) => {
+      const d = document.createElement('div'); d.className = 'ke-rank';
+      const r = document.createElement('span'); r.className = 'r'; r.textContent = String(i + 1);
+      const n = document.createElement('span'); n.className = 'nm'; n.textContent = R[x.id].ad;
+      const t = document.createElement('span'); t.className = 'dt';
+      t.textContent = '%' + f2(x.r) + ' zam · sepetin %' + (w.sh[x.id] * 100).toFixed(0) + "'i · "
+        + (S.hideTL ? '+' + x.c.toFixed(2) + ' puan' : '+' + tl(w.sh[x.id] * w.B * x.r / 100 * 12) + '/yıl');
+      d.append(r, n, t); l2.appendChild(d);
+    });
+    // 3: dolar bazında
+    $('ke-s3-num').textContent = (w.usdReal >= 0 ? '+' : '−') + '%' + Math.abs(w.usdReal).toFixed(2);
+    $('ke-s3-usd').textContent = f2(R.USD.oran);
+    const gap = w.p - R.USD.oran;
+    $('ke-s3-lead').textContent = gap >= 0
+      ? 'Sepetin dolardan ' + gap.toFixed(2) + ' puan hızlı pahalandı: dolar bazında bile hayatın pahalandı.'
+      : 'Sepetin dolardan ' + (-gap).toFixed(2) + ' puan yavaş pahalandı: dolar bazında hayatın ucuzladı.';
+    mini('ke-s3-mini', [['Senin sepetin', w.p, true], ['USD/TRY', R.USD.oran], ['EUR/TRY', R.EUR.oran], ['Konut fiyatı', R.KFE.oran]]);
+    // 4: 2027
+    $('ke-s4-xl').textContent = budgetLine(w);
+    $('ke-s4-lead').textContent = 'Alım gücünü korumak için 12 ay sonra gereken artış. Senin hızın en çok '
+      + w.near[0].toLocaleLowerCase('tr') + ' beklentisine (%' + f2(w.near[1]) + ') yakın.';
+    const emax = Math.max(w.p, R.BEK_PIYASA.oran, R.BEK_REEL.oran, R.BEK_HANE.oran);
+    $('ke-s4-me').textContent = '%' + f2(w.p);
+    $('ke-s4-me-b').style.width = (emax > 0 ? w.p / emax * 100 : 0) + '%';
+    [['pi', 'BEK_PIYASA'], ['re', 'BEK_REEL'], ['ha', 'BEK_HANE']].forEach(([k, id]) => {
+      $('ke-s4-' + k).textContent = f2(R[id].oran);
+      $('ke-s4-' + k + '-b').style.width = (R[id].oran / emax * 100) + '%';
+    });
+    // 5: özet kartı
+    $('ke-w-persona').textContent = w.persona[0];
+    $('ke-w-pdesc').textContent = w.persona[1];
+    $('ke-w-me').textContent = w.has ? '%' + f2(w.p) : '—';
+    $('ke-w-vs').textContent = 'Resmi TÜFE %' + f2(w.H) + ' · ' + (w.diff >= 0 ? '+' : '−') + Math.abs(w.diff).toFixed(2) + ' puan';
+    const hits = $('ke-w-hits'); hits.innerHTML = '';
+    w.top3.slice(0, 2).forEach((x, i) => {
+      const d = document.createElement('div'); d.className = 'hit';
+      const a = document.createElement('span'); a.textContent = (i + 1) + '. ' + R[x.id].ad;
+      const b = document.createElement('span'); b.textContent = '%' + f2(x.r);
+      d.append(a, b); hits.appendChild(d);
+    });
+    $('ke-w-usd').textContent = usdLine(w);
+    $('ke-w-2027').textContent = S.hideTL ? '%' + f2(w.p) + ' artış gerekiyor' : budgetLine(w);
+    const bd = $('ke-w-badges'); bd.innerHTML = '';
+    w.badges.forEach(b => { const s = document.createElement('span'); s.textContent = b; bd.appendChild(s); });
+    // stüdyo
+    const st = $('ke-story');
+    Object.keys(THEMES).forEach(k => st.classList.toggle('t-' + k, k === S.theme));
+    document.querySelectorAll('#ke-themes button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === S.theme)));
+    document.querySelectorAll('#ke-fmt button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fmt === S.fmt)));
+    $('ke-hide').checked = S.hideTL;
+    if ($('ke-png').classList.contains('on') && !$('ke-wrapv').classList.contains('ke-hide')) makePNG();
+  }
+
+  function storyGo(i) {
+    si = Math.max(0, Math.min(NS - 1, i));
+    document.querySelectorAll('#ke-story .ke-slide').forEach((s, k) => s.classList.toggle('on', k === si));
+    document.querySelectorAll('#ke-prog span').forEach((s, k) => {
+      s.className = (k < si || (k === si && si === NS - 1)) ? 'done' : (k === si ? 'on' : '');
+      const bar = s.firstChild; bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = '';
+    });
+    $('ke-scount').textContent = (si + 1) + ' / ' + NS;
+    if (si === NS - 1) setPlaying(false);
+    if (si === 1) countUp();
+  }
+  function setPlaying(v) {
+    playing = v;
+    $('ke-story').classList.toggle('paused', !v);
+    $('ke-play').innerHTML = ico(v ? 'pause' : 'play');
+  }
+  function countUp() {
+    if (!WR || !WR.has || RM) return;
+    const el = $('ke-s1-num'), to = WR.p, t0 = performance.now();
+    counting = true;
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / 900), e = 1 - Math.pow(1 - k, 3);
+      if (k < 1 && si === 1) { el.textContent = '%' + (to * e).toFixed(2); requestAnimationFrame(step); }
+      else { counting = false; el.textContent = '%' + f2(WR.p); }
+    };
+    requestAnimationFrame(step);
+  }
+
+  function rr(x, X, Y, w, h, r) {
+    x.beginPath(); x.moveTo(X + r, Y);
+    x.arcTo(X + w, Y, X + w, Y + h, r); x.arcTo(X + w, Y + h, X, Y + h, r);
+    x.arcTo(X, Y + h, X, Y, r); x.arcTo(X, Y, X + w, Y, r); x.closePath();
+  }
+  function hexA(h, a) { const n = parseInt(h.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; }
+
+  function makePNG() {
+    const w = WR; if (!w) return;
+    const T = THEMES[S.theme], sq = S.fmt === 'square';
+    const W = 1080, H = sq ? 1080 : 1920, P = 80;
+    const c = document.createElement('canvas'); c.width = W; c.height = H;
+    const x = c.getContext('2d');
+    const FF = getComputedStyle($('ke')).fontFamily || 'sans-serif';
+    const font = (wt, s) => { x.font = wt + ' ' + s + 'px ' + FF; };
+    const txt = (s, X, Y, a, align, col) => {
+      x.globalAlpha = a == null ? 1 : a; x.textAlign = align || 'left'; x.fillStyle = col || '#fff';
+      x.fillText(s, X, Y); x.globalAlpha = 1; x.textAlign = 'left';
+    };
+    const fit = (s, maxW) => { if (x.measureText(s).width <= maxW) return s; while (s.length > 1 && x.measureText(s + '…').width > maxW) s = s.slice(0, -1); return s + '…'; };
+    const wrap = (s, maxW) => {
+      const out = []; let line = '';
+      s.split(' ').forEach(wd => { const t = line ? line + ' ' + wd : wd; if (x.measureText(t).width > maxW && line) { out.push(line); line = wd; } else line = t; });
+      if (line) out.push(line); return out;
+    };
+    const g = x.createLinearGradient(0, 0, W * 0.6, H);
+    g.addColorStop(0, T.b1); g.addColorStop(0.6, T.b2); g.addColorStop(1, T.b2);
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    const glow = (cx, cy, r, col) => {
+      const rg = x.createRadialGradient(cx, cy, 0, cx, cy, r);
+      rg.addColorStop(0, hexA(col, 0.6)); rg.addColorStop(1, hexA(col, 0));
+      x.fillStyle = rg; x.fillRect(0, 0, W, H);
+    };
+    glow(0, 0, W * 1.1, T.c1); glow(W, H, W * 1.1, T.c2);
+    const box = (y, title, rows) => {
+      const lh = 52, h = 32 + 30 + rows.length * lh + 20;
+      x.fillStyle = 'rgba(0,0,0,0.28)'; rr(x, P, y, W - 2 * P, h, 28); x.fill();
+      font('800', 24); txt(title.toLocaleUpperCase('tr'), P + 32, y + 56, 0.75);
+      rows.forEach((r, i) => {
+        const yy = y + 100 + i * lh;
+        font('700', 30); const rw = r[1] ? x.measureText(r[1]).width + 24 : 0;
+        if (r[1]) txt(r[1], W - P - 32, yy, 1, 'right', '#ffd6de');
+        font('700', 34); txt(fit(r[0], W - 2 * P - 64 - rw), P + 32, yy);
+      });
+      return h;
+    };
+
+    let y = 110;
+    font('800', 26); txt('2026 WRAPPED', P, y, 0.85); txt('EKONOMİK ÖZETİN', W - P, y, 0.85, 'right');
+    y += sq ? 75 : 120;
+    font('500', sq ? 30 : 36); txt('Bu yılki ekonomik personan', P, y, 0.8);
+    y += sq ? 78 : 100;
+    font('900', sq ? 70 : 96);
+    wrap(w.persona[0], W - 2 * P).forEach(l => { txt(l, P, y); y += sq ? 76 : 100; });
+    if (!sq) {
+      font('500', 36); y -= 40;
+      wrap(w.persona[1], W - 2 * P).forEach(l => { txt(l, P, y, 0.85); y += 48; });
+      y += 40;
+    }
+    y += sq ? 10 : 40;
+    font('500', sq ? 28 : 36); txt('Kişisel enflasyonun', P, y, 0.8);
+    y += sq ? 165 : 230;
+    font('900', sq ? 170 : 240); txt(w.has ? '%' + f2(w.p) : '—', P - 6, y);
+    y += sq ? 55 : 75;
+    font('600', sq ? 30 : 36);
+    txt('Resmi TÜFE %' + f2(w.H) + ' · ' + (w.diff >= 0 ? '+' : '−') + Math.abs(w.diff).toFixed(2) + ' puan', P, y, 0.92);
+    y += sq ? 35 : 55;
+    const hitRows = w.top3.slice(0, 2).map((h, i) => [(i + 1) + '. ' + R[h.id].ad, '%' + f2(h.r)]);
+    if (sq) {
+      hitRows.push(['💵 ' + usdLine(w), '']);
+      box(y, 'En çok darbe vuranlar', hitRows);
+    } else {
+      y += box(y, 'En çok darbe vuran 2 kalem', hitRows) + 24;
+      y += box(y, 'Dolar bazında', [[usdLine(w), '']]) + 24;
+      y += box(y, "2027'de bütçen", [[S.hideTL ? '%' + f2(w.p) + ' artış gerekiyor' : budgetLine(w), '']]) + 32;
+      font('700', 28); let bx = P;
+      w.badges.forEach(b => {
+        const tw = x.measureText(b).width + 44;
+        if (bx + tw > W - P) { bx = P; y += 72; }
+        x.fillStyle = 'rgba(255,255,255,0.14)'; rr(x, bx, y, tw, 58, 29); x.fill();
+        txt(b, bx + 22, y + 39); bx += tw + 12;
+      });
+    }
+    font('600', 24);
+    txt('Kaynak: TCMB EVDS · Eyl/Eki 2026', P, H - 60, 0.7);
+    txt('#KişiselEnflasyonum', W - P, H - 60, 0.7, 'right');
+
+    const name = '2026-wrapped-' + (sq ? 'kare' : 'story') + '.png';
+    const url = c.toDataURL('image/png');
+    $('ke-png-img').src = url;
+    const dl = $('ke-dl'); dl.href = url; dl.setAttribute('download', name);
+    pngFile = null;
+    if (c.toBlob) c.toBlob(b => { if (b) { try { pngFile = new File([b], name, { type: 'image/png' }); } catch (e) { pngFile = null; } } });
+  }
+
+  let canFiles = false;
+  try { canFiles = !!(navigator.canShare && navigator.canShare({ files: [new File([''], 'a.png', { type: 'image/png' })] })); } catch (e) {}
+
+  function buildShare() {
+    const g = $('ke-sharegrid');
+    g.innerHTML = '<button type="button" class="ke-btn ke-bigshare" id="ke-go"></button><a class="ke-btn ghost" id="ke-dl" href="#" download="2026-wrapped.png"></a>'
+      + '<div class="ke-apps"><i style="background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)">' + ico('insta', 15) + '</i>'
+      + '<i style="background:#25d366">' + ico('wa', 15) + '</i><i style="background:#000">' + ico('xlogo', 15) + '</i>'
+      + '<span>Hikâye, gönderi, sohbet ya da Durum</span></div>';
+    setIc('ke-go', 'share', 'Paylaş');
+    setIc('ke-dl', 'download', 'İndir');
+    $('ke-go').addEventListener('click', share);
+    $('ke-png-note').textContent = 'Paylaş’a bas → menüden Instagram’ı (Hikâye/Gönderi) ya da WhatsApp’ı (sohbet/Durum) seç. Görsel düzenleme ekranına hazır gelir; çıkartma, yazı ekleyip paylaşırsın.';
+  }
+
+  // Ayrı sekmede açılan paylaşım ekranı: üst seviye sayfada paylaşım menüsü çalışır.
+  function sharePage(src, name) {
+    const end = '<' + '/script>';
+    return '<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+      + '<title>2026 Wrapped · Paylaş</title><style>'
+      + 'body{margin:0;min-height:100vh;background:#0b0b14;color:#f4f4fb;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px;box-sizing:border-box;text-align:center}'
+      + 'img{max-width:min(90vw,400px);max-height:68vh;border-radius:22px;box-shadow:0 20px 60px rgba(139,92,246,.35)}'
+      + 'button{border:0;border-radius:999px;padding:16px 40px;font-size:18px;font-weight:800;background:#1ed760;color:#04130a;cursor:pointer}'
+      + 'p{margin:0;max-width:26rem;font-size:14px;color:#9d9dbb;line-height:1.5}</style></head><body>'
+      + '<img id="i" alt="2026 Wrapped"><button id="s">Paylaş</button>'
+      + '<p id="n">Menüden Instagram’ı (Hikâye/Gönderi) ya da WhatsApp’ı seç; görsel düzenleme ekranına hazır gelir.</p>'
+      + '<script>var src=' + JSON.stringify(src) + ',name=' + JSON.stringify(name) + ',file=null;'
+      + 'document.getElementById("i").src=src;'
+      + 'fetch(src).then(function(r){return r.blob()}).then(function(b){file=new File([b],name,{type:"image/png"})});'
+      + 'document.getElementById("s").onclick=function(){var n=document.getElementById("n");'
+      + 'if(file&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(e){if(e.name!=="AbortError")n.textContent="Paylaşım açılamadı: görsele basılı tut → Paylaş / Kaydet."});}'
+      + 'else n.textContent="Bu tarayıcı görsel paylaşımını desteklemiyor: görsele basılı tut (bilgisayarda sağ tıkla) → Paylaş / Resmi kaydet.";};'
+      + end + '</body></html>';
+  }
+
+  async function share() {
+    const note = $('ke-png-note');
+    if (canFiles && pngFile) {
+      try { await navigator.share({ files: [pngFile] }); }
+      catch (e) { if (!e || e.name !== 'AbortError') note.textContent = 'Paylaşım menüsü açılamadı: İndir’e basıp görseli uygulamadan ekleyebilirsin.'; }
+      return;
+    }
+    const src = $('ke-png-img').src;
+    if (!src) return;
+    let w = null;
+    try { w = window.open(URL.createObjectURL(new Blob([sharePage(src, $('ke-dl').getAttribute('download'))], { type: 'text/html' })), '_blank'); } catch (e) {}
+    note.textContent = w
+      ? 'Paylaşım ekranı yeni sekmede açıldı: oradaki “Paylaş”a bas.'
+      : 'Bu sayfa paylaşım menüsünü açamıyor: İndir’e bas ya da görsele basılı tut → Paylaş.';
+  }
+
+  function buildWrapped() {
+    const pr = $('ke-prog');
+    for (let k = 0; k < NS; k++) { const s = document.createElement('span'); s.appendChild(document.createElement('i')); pr.appendChild(s); }
+    pr.addEventListener('animationend', (e) => {
+      if (!playing) return;
+      const sp = e.target.parentElement;
+      if (sp && sp.classList.contains('on')) storyGo(si + 1);
+    });
+    $('ke-tprev').addEventListener('click', () => storyGo(si - 1));
+    $('ke-tnext').addEventListener('click', () => storyGo(si + 1));
+    $('ke-prev').addEventListener('click', () => storyGo(si - 1));
+    $('ke-next').addEventListener('click', () => storyGo(si + 1));
+    $('ke-play').addEventListener('click', () => {
+      if (playing) setPlaying(false);
+      else { setPlaying(true); storyGo(si === NS - 1 ? 0 : si); }
+    });
+    $('ke-story').addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { storyGo(si + 1); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { storyGo(si - 1); e.preventDefault(); }
+      else if (e.key === ' ') { $('ke-play').click(); e.preventDefault(); }
+    });
+    const th = $('ke-themes');
+    Object.keys(THEMES).forEach(k => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 't-' + k; b.dataset.theme = k; b.setAttribute('aria-label', 'Tema: ' + THEMES[k].ad);
+      b.addEventListener('click', () => { S.theme = k; renderWrapped(); });
+      th.appendChild(b);
+    });
+    document.querySelectorAll('#ke-fmt button').forEach(b => b.addEventListener('click', () => { S.fmt = b.dataset.fmt; renderWrapped(); }));
+    $('ke-hide').addEventListener('change', (e) => { S.hideTL = e.target.checked; renderWrapped(); });
+    buildShare();
+    setPlaying(false);
+  }
+
+  dash.onData(() => {
+    const d = dash.data('evds');
+    const skel = $('ke-skel'), msg = $('ke-skel-msg');
+    if (d.status !== 'ok') {
+      skel.classList.remove('ke-hide');
+      $('ke-calc').classList.add('ke-hide');
+      $('ke-wrapv').classList.add('ke-hide');
+      if (d.status === 'error' || d.status === 'missing') {
+        msg.className = ''; msg.innerHTML = '<span class="dot"></span>Failed to load';
+      } else { msg.className = 'dash-skeleton'; msg.textContent = ''; }
+      return;
+    }
+    R = {};
+    d.data.forEach(r => { R[r.id] = Object.assign({}, r, { oran: Number(r.oran) }); });
+    cats = d.data.filter(r => r.grup === 'kategori').map(r => ({ id: r.id, ad: r.ad }));
+    skel.classList.add('ke-hide');
+    if (!built) { build(); built = true; showTab('calc'); $('ke-calc').classList.add('ke-in'); }
+    else {
+      const wrapOn = $('ke-tab-wrap').getAttribute('aria-selected') === 'true';
+      $('ke-calc').classList.toggle('ke-hide', wrapOn);
+      $('ke-wrapv').classList.toggle('ke-hide', !wrapOn);
+    }
+    update();
+  });
+})();
+</script>
+
+</div>
+</body>
+</html>
