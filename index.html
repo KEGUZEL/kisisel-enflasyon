@@ -256,7 +256,7 @@ window.dash = (function () {
     <section class="ke-ctrl">
       <div class="ke-card ke-field">
         <label for="ke-budget">Aylık harcama bütçen</label>
-        <div class="ke-money"><input id="ke-budget" type="number" min="0" step="1000" inputmode="numeric" value="50000"><span>TL</span></div>
+        <div class="ke-money"><input id="ke-budget" type="number" min="0" step="1000" inputmode="numeric" value="" placeholder="örn. 50000"><span>TL</span></div>
         <div class="ke-small" style="margin-top:8px" id="ke-budget-note"></div>
       </div>
       <div class="ke-card ke-field">
@@ -323,7 +323,12 @@ window.dash = (function () {
 
   <!-- WRAPPED -->
   <div id="ke-wrapv" class="ke-hide">
-    <div class="ke-wrap">
+    <div class="ke-card ke-hide" id="ke-wrap-empty">
+      <div class="ke-ttl">Wrapped kartın için önce sepetini oluştur</div>
+      <p class="ke-note">Hesapla sekmesinde bir yaşam tarzı şablonu seç ya da bütçeni kalemlere dağıt; kartın burada hazırlanır.</p>
+      <button type="button" class="ke-btn" id="ke-goto-calc">Sepetimi oluştur</button>
+    </div>
+    <div class="ke-wrap" id="ke-wrapgrid">
       <div class="ke-stage">
         <div class="ke-story t-aurora paused" id="ke-story" tabindex="0" aria-label="2026 Wrapped hikâyesi; ok tuşlarıyla gezin, boşlukla oynat/duraklat">
           <div class="ke-prog" id="ke-prog"></div>
@@ -461,6 +466,7 @@ window.dash = (function () {
 
   // Şablon ağırlıkları (% bütçe payı) — kullanıcının seçtiği yaşam tarzı varsayımları
   const TPL = {
+    ozel:   { ad: 'Kendi sepetim', d: 'Sıfırdan kendin dağıt', ic: 'sliders', w: {} },
     beyaz:  { ad: 'Beyaz Yakalı & Araçlı', d: 'Ulaşım, kafe/restoran, konut', ic: 'car',
       w: { '01':14,'02':3,'03':5,'04':24,'05':3,'06':2,'07':20,'08':5,'09':5,'10':0,'11':12,'12':4,'13':3 } },
     aile:   { ad: 'Çocuklu Aile', d: 'Eğitim, gıda, sağlık, konut', ic: 'users',
@@ -491,7 +497,7 @@ window.dash = (function () {
   // Tipik bir hanenin bütçe payları (%); persona, bu dağılımdan en çok saptığın kalemden seçilir
   const BASE = { '01':25,'02':3.5,'03':6.5,'04':22,'05':8,'06':3,'07':16,'08':3.5,'09':3.5,'10':2,'11':9,'12':1,'13':5 };
 
-  const S = { budget: 50000, mode: 'mevcut', city: 'YKKE_IST', tpl: 'beyaz', w: Object.assign({}, TPL.beyaz.w), saved: {}, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
+  const S = { budget: 0, mode: 'mevcut', city: 'YKKE_IST', tpl: 'ozel', w: {}, saved: {}, theme: 'aurora', fmt: 'story', hideTL: true, plat: 'x' };
   const tl = (v) => new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(Math.round(v)) + ' TL';
   const f2 = (v) => v.toFixed(2);
   const sgn = (v) => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2);
@@ -636,16 +642,18 @@ window.dash = (function () {
     // üst panel
     $('ke-tufe').textContent = f2(H);
     $('ke-me').textContent = has ? '%' + f2(p) : '—';
-    $('ke-me-sub').textContent = has ? 'Bu hızla ' + tl(B) + "'lik aylık sepetin bir yılda " + tl(B * (1 + p / 100)) + ' olur.' : 'Sepetine en az bir kalem ekle.';
+    $('ke-me-sub').textContent = !has ? 'Bir şablon seç ya da bütçeni kalemlere dağıt.'
+      : B ? 'Bu hızla ' + tl(B) + "'lik aylık sepetin bir yılda " + tl(B * (1 + p / 100)) + ' olur.'
+      : 'Bütçeni girersen TL karşılığını da görürsün.';
     const de = $('ke-diff');
     de.textContent = has ? sgn(diff) + ' puan' : '—';
-    de.className = 'ke-big ke-diff ' + (diff >= 0 ? 'up' : 'down');
+    de.className = 'ke-big ke-diff ' + (!has ? '' : diff >= 0 ? 'up' : 'down');
     const pill = $('ke-diff-pill');
-    pill.className = 'ke-pill ' + (diff >= 0 ? 'up' : 'down');
+    pill.className = 'ke-pill ' + (diff >= 0 ? 'up' : 'down') + (has ? '' : ' ke-hide');
     pill.textContent = has ? (Math.abs(diff).toFixed(2) + ' puan daha ' + (diff >= 0 ? 'fazla' : 'az') + ' zamlandın!') : '';
-    $('ke-budget-note').textContent = 'Yıllık ek maliyet: ' + tl(B * p / 100 * 12) + ' (aylık +' + tl(B * p / 100) + ')';
+    $('ke-budget-note').textContent = B && has ? 'Yıllık ek maliyet: ' + tl(B * p / 100 * 12) + ' (aylık +' + tl(B * p / 100) + ')' : 'Aylık toplam harcamanı TL olarak gir.';
     const bi = $('ke-budget');
-    if (document.activeElement !== bi) bi.value = B;
+    if (document.activeElement !== bi) bi.value = B || '';
 
     // barınma
     document.querySelectorAll('.ke-seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === S.mode)));
@@ -657,6 +665,7 @@ window.dash = (function () {
       b.classList.toggle('edited', !!S.saved[b.dataset.tpl]);
     });
     $('ke-reset').style.visibility = S.saved[S.tpl] ? 'visible' : 'hidden';
+    $('ke-reset').textContent = S.tpl === 'ozel' ? '↺ Sıfırla' : '↺ Varsayılana dön';
 
     // sliderlar
     cats.forEach(c => {
@@ -679,10 +688,11 @@ window.dash = (function () {
       sv.append(bb, ' · ' + tl(w / 100 * B));
     });
     const used = Math.min(100, m.tot), left = Math.max(0, 100 - m.tot);
-    $('ke-norm').textContent = 'Dağıtılan: ' + tl(used / 100 * B) + ' / ' + tl(B);
-    $('ke-norm2').textContent = left > 0.01 ? 'Kalan: ' + tl(left / 100 * B) : 'Bütçenin tamamı dağıtıldı';
+    $('ke-norm').textContent = B ? 'Dağıtılan: ' + tl(used / 100 * B) + ' / ' + tl(B) : 'Dağıtılan: %' + used.toFixed(1);
+    $('ke-norm2').textContent = left > 0.01 ? 'Kalan: ' + (B ? tl(left / 100 * B) : '%' + left.toFixed(1)) : 'Bütçenin tamamı dağıtıldı';
     $('ke-alloc-fill').style.width = used + '%';
-    $('ke-alloc-hint').textContent = left > 0.01
+    $('ke-alloc-hint').textContent = !m.tot ? "Bir şablon seç ya da slider'larla bütçeni kalemlere dağıt."
+      : left > 0.01
       ? 'Kalan tutar hesaba katılmaz. Bir kalemi artırınca kalan paydan kullanır.'
       : 'Bütçe doldu: bir kalemi artırmak için önce başka bir kalemi azalt.';
 
@@ -714,11 +724,11 @@ window.dash = (function () {
     const smax = Math.max.apply(null, sims.map(s => s[1]));
     $('ke-s-me-r').textContent = has ? '%' + f2(p) : '—';
     sims.forEach(([k, r]) => {
-      $('ke-s-' + k).textContent = tl(B * (1 + r / 100));
-      $('ke-s-' + k + '-p').textContent = '+' + tl(B * r / 100) + ' / ay · +' + tl(B * r / 100 * 12) + ' / yıl';
+      $('ke-s-' + k).textContent = B ? tl(B * (1 + r / 100)) : '+%' + f2(r);
+      $('ke-s-' + k + '-p').textContent = B ? '+' + tl(B * r / 100) + ' / ay · +' + tl(B * r / 100 * 12) + ' / yıl' : 'Bütçeni girince TL olarak görünür';
       $('ke-s-' + k + '-m').style.width = (smax > 0 ? r / smax * 100 : 0) + '%';
     });
-    $('ke-s-note').textContent = 'Bugünkü ' + tl(B) + "'lik aylık bütçenin alım gücünü korumak için 12 ay sonra eline geçmesi gereken tutar (Ekim 2026 beklenti anketleri).";
+    $('ke-s-note').textContent = (B ? 'Bugünkü ' + tl(B) + "'lik" : 'Bugünkü') + " aylık bütçenin alım gücünü korumak için 12 ay sonra eline geçmesi gereken tutar (Ekim 2026 beklenti anketleri).";
 
     // wrapped
     let pk;
@@ -774,13 +784,16 @@ window.dash = (function () {
 
   function renderWrapped() {
     const w = WR; if (!w) return;
+    $('ke-wrap-empty').classList.toggle('ke-hide', w.has);
+    $('ke-wrapgrid').classList.toggle('ke-hide', !w.has);
+    if (!w.has) { setPlaying(false); return; }
     // 1: kişisel enflasyon
     if (!counting) $('ke-s1-num').textContent = w.has ? '%' + f2(w.p) : '—';
     $('ke-s1-tufe').textContent = f2(w.H);
     $('ke-s1-diff').textContent = w.diff >= 0
       ? 'Resmi rakamdan ' + Math.abs(w.diff).toFixed(2) + ' puan daha fazla zamlandın.'
       : 'Resmi rakamdan ' + Math.abs(w.diff).toFixed(2) + ' puan daha az zamlandın. Tebrikler!';
-    $('ke-s1-hint').textContent = S.hideTL ? '' : 'Aylık ' + tl(w.B) + "'lik sepetin yılda +" + tl(w.B * w.p / 100 * 12) + ' ek maliyet demek.';
+    $('ke-s1-hint').textContent = S.hideTL || !w.B ? '' : 'Aylık ' + tl(w.B) + "'lik sepetin yılda +" + tl(w.B * w.p / 100 * 12) + ' ek maliyet demek.';
     // 2: en çok vuranlar
     const l2 = $('ke-s2-list'); l2.innerHTML = '';
     w.top3.forEach((x, i) => {
@@ -872,7 +885,7 @@ window.dash = (function () {
   function hexA(h, a) { const n = parseInt(h.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; }
 
   function makePNG() {
-    const w = WR; if (!w) return;
+    const w = WR; if (!w || !w.has) return;
     const T = THEMES[S.theme], sq = S.fmt === 'square';
     const W = 1080, H = sq ? 1080 : 1920, P = 80;
     const c = document.createElement('canvas'); c.width = W; c.height = H;
@@ -1041,6 +1054,7 @@ window.dash = (function () {
     document.querySelectorAll('#ke-fmt button').forEach(b => b.addEventListener('click', () => { S.fmt = b.dataset.fmt; renderWrapped(); }));
     $('ke-hide').addEventListener('change', (e) => { S.hideTL = e.target.checked; renderWrapped(); });
     buildShare();
+    $('ke-goto-calc').addEventListener('click', () => showTab('calc'));
     setPlaying(false);
   }
 
